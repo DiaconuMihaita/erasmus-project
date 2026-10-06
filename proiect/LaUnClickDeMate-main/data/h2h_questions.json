@@ -1,0 +1,302 @@
+[
+    {
+        "id": "h2h_m1",
+        "subject": "math",
+        "category": "Algebră",
+        "question": "Calculați discriminantul Δ pentru ecuația x² - 4x + 3 = 0.",
+        "options": [
+            "4",
+            "16",
+            "1",
+            "0"
+        ],
+        "answer": "4",
+        "hint": "Δ = b² - 4ac = (-4)² - 4·1·3",
+        "chapterTitle": "Ecuația de Gradul II"
+    },
+    {
+        "id": "h2h_m2",
+        "subject": "math",
+        "category": "Algebră",
+        "question": "Dacă a₁ = 3 și r = 5 într-o progresie aritmetică, cât este a₄?",
+        "options": [
+            "18",
+            "15",
+            "13",
+            "20"
+        ],
+        "answer": "18",
+        "hint": "a₄ = a₁ + 3r = 3 + 15",
+        "chapterTitle": "Progresii Aritmetice"
+    },
+    {
+        "id": "h2h_m3",
+        "subject": "math",
+        "category": "Trigonometrie",
+        "question": "Cât este valoarea sin(30°) + cos(60°)?",
+        "options": [
+            "1",
+            "1/2",
+            "√3/2",
+            "2"
+        ],
+        "answer": "1",
+        "hint": "1/2 + 1/2 = 1",
+        "chapterTitle": "Trigonometrie"
+    },
+    {
+        "id": "h2h_m4",
+        "subject": "math",
+        "category": "Algebră",
+        "question": "Conform relațiilor lui Viète, cât este suma rădăcinilor pentru 2x² - 8x + 5 = 0?",
+        "options": [
+            "4",
+            "-4",
+            "8",
+            "5/2"
+        ],
+        "answer": "4",
+        "hint": "S = -b/a = -(-8)/2 = 4",
+        "chapterTitle": "Relațiile lui Viète"
+    },
+    {
+        "id": "h2h_m5",
+        "subject": "math",
+        "category": "Geometrie",
+        "question": "Calculați modulul vectorului v = 3i + 4j.",
+        "options": [
+            "5",
+            "7",
+            "25",
+            "1"
+        ],
+        "answer": "5",
+        "hint": "||v|| = √(3² + 4²) = √25 = 5",
+        "chapterTitle": "Vectori în Plan"
+    },
+    {
+        "id": "h2h_m6",
+        "subject": "math",
+        "category": "Algebră",
+        "question": "Dacă b₁ = 2 și rația q = 3 într-o progresie geometrică, cât este b₃?",
+        "options": [
+            "18",
+            "6",
+            "12",
+            "54"
+        ],
+        "answer": "18",
+        "hint": "b₃ = b₁ · q² = 2 · 9 = 18",
+        "chapterTitle": "Progresii Geometrice"
+    },
+    {
+        "id": "h2h_m7",
+        "subject": "math",
+        "category": "Algebră",
+        "question": "Care este rădăcina funcției f(x) = 5x - 20?",
+        "options": [
+            "4",
+            "-4",
+            "20",
+            "5"
+        ],
+        "answer": "4",
+        "hint": "5x - 20 = 0 ⇒ 5x = 20 ⇒ x = 4",
+        "chapterTitle": "Funcția de Gradul I"
+    },
+    {
+        "id": "h2h_m8",
+        "subject": "math",
+        "category": "Trigonometrie",
+        "question": "Cât este sin²(45°) + cos²(45°)?",
+        "options": [
+            "1",
+            "0",
+            "1/2",
+            "√2"
+        ],
+        "answer": "1",
+        "hint": "Formula fundamentală: sin²x + cos²x = 1",
+        "chapterTitle": "Identități Trigonometrice"
+    },
+    {
+        "id": "h2h_m9",
+        "subject": "math",
+        "category": "Algebră",
+        "question": "Câte elemente are mulțimea A ∪ B dacă |A| = 6, |B| = 5 și |A ∩ B| = 3?",
+        "options": [
+            "8",
+            "11",
+            "9",
+            "7"
+        ],
+        "answer": "8",
+        "hint": "|A ∪ B| = 6 + 5 - 3 = 8",
+        "chapterTitle": "Mulțimi & Logică"
+    },
+    {
+        "id": "h2h_m10",
+        "subject": "math",
+        "category": "Geometrie",
+        "question": "Care este abscisa vârfului parabolei f(x) = x² - 6x + 8?",
+        "options": [
+            "3",
+            "-3",
+            "6",
+            "-6"
+        ],
+        "answer": "3",
+        "hint": "x_v = -b / (2a) = -(-6) / 2 = 3",
+        "chapterTitle": "Vârful Parabolei"
+    },
+    {
+        "id": "h2h_i1",
+        "subject": "info",
+        "category": "Baze C++",
+        "question": "Ce returnează expresia 23 % 5 în C++?",
+        "options": [
+            "3",
+            "4",
+            "4.6",
+            "0"
+        ],
+        "answer": "3",
+        "hint": "23 împărțit la 5 dă câtul 4 și restul 3",
+        "chapterTitle": "Operatori C++"
+    },
+    {
+        "id": "h2h_i2",
+        "subject": "info",
+        "category": "Baze C++",
+        "question": "Care este rezultatul împărțirii 17 / 4 în C++ dacă ambele sunt întregi?",
+        "options": [
+            "4",
+            "4.25",
+            "1",
+            "5"
+        ],
+        "answer": "4",
+        "hint": "Împărțirea întregilor păstrează doar câtul întreg",
+        "chapterTitle": "Operatori C++"
+    },
+    {
+        "id": "h2h_i3",
+        "subject": "info",
+        "category": "Prelucrare Cifre",
+        "question": "Ce valoare are oglinditul numărului 405 în C++?",
+        "options": [
+            "504",
+            "54",
+            "450",
+            "45"
+        ],
+        "answer": "504",
+        "hint": "Cifrele inversate: 405 devine 504",
+        "chapterTitle": "Prelucrarea Cifrelor"
+    },
+    {
+        "id": "h2h_i4",
+        "subject": "info",
+        "category": "Divizibilitate",
+        "question": "Cât este CMMDC al numerelor 28 și 42?",
+        "options": [
+            "14",
+            "7",
+            "2",
+            "28"
+        ],
+        "answer": "14",
+        "hint": "14 divide atât pe 28 (14·2) cât și pe 42 (14·3)",
+        "chapterTitle": "Algoritmul lui Euclid"
+    },
+    {
+        "id": "h2h_i5",
+        "subject": "info",
+        "category": "Structuri Repetitive",
+        "question": "De câte ori se execută bucla: for (int i = 0; i < 6; i += 2)?",
+        "options": [
+            "3",
+            "6",
+            "4",
+            "2"
+        ],
+        "answer": "3",
+        "hint": "Valorile lui i sunt: 0, 2, 4 (3 iterații)",
+        "chapterTitle": "Instrucțiunea for"
+    },
+    {
+        "id": "h2h_i6",
+        "subject": "info",
+        "category": "Divizibilitate",
+        "question": "Care este singurul număr prim care este par?",
+        "options": [
+            "2",
+            "0",
+            "4",
+            "Nu există"
+        ],
+        "answer": "2",
+        "hint": "2 are divizorii doar 1 și 2",
+        "chapterTitle": "Numere Prime"
+    },
+    {
+        "id": "h2h_i7",
+        "subject": "info",
+        "category": "Vectori",
+        "question": "Dacă declarăm int v[10];, care este indexul ultimului element dacă indexăm de la 0?",
+        "options": [
+            "9",
+            "10",
+            "8",
+            "11"
+        ],
+        "answer": "9",
+        "hint": "De la 0 la 9 sunt 10 poziții",
+        "chapterTitle": "Tablouri Unidimensionale"
+    },
+    {
+        "id": "h2h_i8",
+        "subject": "info",
+        "category": "Sortare",
+        "question": "Ce face funcția swap(a, b) în C++?",
+        "options": [
+            "Interschimbă a și b",
+            "Șterge b",
+            "Calculează suma",
+            "Compară a și b"
+        ],
+        "answer": "Interschimbă a și b",
+        "hint": "Schimbă valorile celor două variabile între ele",
+        "chapterTitle": "Algoritmi de Sortare"
+    },
+    {
+        "id": "h2h_i9",
+        "subject": "info",
+        "category": "Baze C++",
+        "question": "Ce operator logic reprezintă 'ȘI' în C++?",
+        "options": [
+            "&&",
+            "||",
+            "!",
+            "&"
+        ],
+        "answer": "&&",
+        "hint": "&& este operatorul AND logic",
+        "chapterTitle": "Operatori Logici"
+    },
+    {
+        "id": "h2h_i10",
+        "subject": "info",
+        "category": "Prelucrare Cifre",
+        "question": "Ce instrucțiune extrage ultima cifră a lui n în baza 10?",
+        "options": [
+            "n % 10",
+            "n / 10",
+            "n * 10",
+            "n - 10"
+        ],
+        "answer": "n % 10",
+        "hint": "Restul împărțirii la 10 este ultima cifră",
+        "chapterTitle": "Prelucrarea Cifrelor"
+    }
+]

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathInfo 9 H2H – Learn & Arena | Liceul Teoretic „Emil Racoviță” Vaslui</title>
+    <meta name="description" content="Platformă Interactivă de Învățare, Gamification și Asistență AI pentru elevii de clasa a IX-a din Liceul Teoretic „Emil Racoviță” Vaslui. Dueluri H2H la Matematică și C++, Asistent AI și Laborator Interactiv.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=3">
+    <meta name="theme-color" content="#0B101E">
+    
+    <!-- Chart.js & Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <!-- Canvas Fundal Interactiv (Particule & Formule Matematice / Cod C++) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Top Header Branding -->
+    <header class="top-header">
+        <div class="top-header-inner">
+            <div class="brand-wrapper" onclick="changeView('home')">
+                <div class="brand-logo-icon">⚡</div>
+                <div class="brand-text-block">
+                    <h1>MathInfo 9 <span class="brand-tag">H2H Arena</span></h1>
+                    <div class="brand-subline">
+                        <span class="school-pill">🏛️ Liceul Teoretic „Emil Racoviță” Vaslui</span>
+                        <span>•</span>
+                        <span>Erasmus+ DIGI-EQUAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Quick Stats & Actions -->
+            <div class="header-actions">
+                <div class="header-stat-pill" title="Nivelul și experiența ta">
+                    <span>⭐</span>
+                    <span id="header-user-level">Nivel 1</span>
+                    <strong id="header-user-xp">0 XP</strong>
+                </div>
+
+                <div class="header-stat-pill" title="Victorii în Arena H2H">
+                    <span>⚔️</span>
+                    <span id="header-duel-wins">0 W</span>
+                </div>
+
+                <button id="btn-audio-fx" class="header-btn btn-audio-toggle" title="Comută sunetele interactive">
+                    🔊 ON
+                </button>
+
+                <button id="btn-header-auth" class="header-btn" onclick="changeView('login')">
+                    👤 Conectare
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bara de Navigare Modernă -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#" class="nav-link active" data-section="home">🏠 Acasă</a></li>
+            <li><a href="#" class="nav-link" data-section="lectii">📚 Lecții IX</a></li>
+            <li><a href="#" class="nav-link" data-section="competitie">⚔️ H2H Arena <span class="nav-badge-live">Live</span></a></li>
+            <li><a href="#" class="nav-link" data-section="explica">🤖 MathInfo AI</a></li>
+            <li><a href="#" class="nav-link" data-section="laborator">💻 Code & Math Lab</a></li>
+            <li><a href="#" class="nav-link" data-section="clasa">🏫 Clasă LER</a></li>
+            <li><a href="#" class="nav-link" data-section="profil">🏆 Profil & Ranguri</a></li>
+            <li><a href="#" class="nav-link" data-section="despre">ℹ️ Despre Proiect</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conținut Principal -->
+    <main id="main-content">
+
+        <!-- ==========================================
+             1. SECȚIUNEA ACASĂ / HUB
+             ========================================== -->
+        <section id="home" class="view">
+            <!-- Card Salut Personalizat -->
+            <div id="user-greeting-card" class="welcome-card user-greeting-card hidden">
+                <h2 id="user-greeting-title" class="typewriter-line">Salut, bobocule de la Racoviță! 👋</h2>
+                <p id="user-greeting-subtitle">Continuă pregătirea la matematică și C++ și cucerește Arena H2H astăzi!</p>
+            </div>
+
+            <!-- Hero Banner -->
+            <div class="welcome-card home-hero">
+                <div class="hero-meta-row">
+                    <span class="home-badge">Platformă Educațională Clasa a IX-a</span>
+                    <span class="home-badge erasmus-badge">🇪🇺 Inițiativa Erasmus+ DIGI-EQUAL</span>
+                    <span class="home-badge" style="background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border-color: rgba(16, 185, 129, 0.4);">🎯 LER Vaslui</span>
+                </div>
+                <h2 class="home-title">Învață Matematică & C++ prin Dueluri Interactive și Asistență AI</h2>
+                <p class="home-subtitle">
+                    Creat dedicat pentru elevii de clasa a IX-a din Liceul Teoretic „Emil Racoviță” Vaslui. Înțelege conceptele cheie de la algebră și geometrie până la algoritmi fundamentali în C++, antrenează-te cu mentorul AI și duelează-te în arena Head-to-Head!
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="changeView('competitie')">⚔️ Intră în Arena H2H</button>
+                    <button class="btn-secondary" onclick="changeView('explica')">🤖 Întreabă MathInfo AI</button>
+                    <button class="btn-secondary" onclick="changeView('laborator')">💻 C++ Code Lab</button>
+                    <button class="btn-secondary" onclick="changeView('lectii')">📘 Curriculă Clasa a IX-a</button>
+                </div>
+            </div>
+
+            <!-- Grid de Funcționalități Cheie -->
+            <div class="hub-features-grid">
+                <div class="hub-feature-card" onclick="changeView('competitie')">
+                    <div class="feature-card-icon" style="background: rgba(239, 68, 68, 0.15); color: #F87171;">⚔️</div>
+                    <h3>Arena H2H Duel</h3>
+                    <p>Înfruntă colegii sau botul inteligent LER în dueluri contra-cronometru de 30 secunde la matematică și informatică.</p>
+                </div>
+
+                <div class="hub-feature-card" onclick="changeView('explica')">
+                    <div class="feature-card-icon" style="background: rgba(99, 102, 241, 0.15); color: #818CF8;">🤖</div>
+                    <h3>Asistent AI Mentor 24/7</h3>
+                    <p>Explicații pas-cu-pas, rezolvitor de ecuații de gradul II și asistență la depanarea codului C++ gratuit pentru toți elevii.</p>
+                </div>
+
+                <div class="hub-feature-card" onclick="changeView('laborator')">
+                    <div class="feature-card-icon" style="background: rgba(6, 182, 212, 0.15); color: #67E8F9;">💻</div>
+                    <h3>Laborator Interactiv C++ & Grafice</h3>
+                    <p>Vizualizator pas-cu-pas pentru Bubble Sort, numere prime, oglindit și trasare dinamică a parabolei f(x) = ax² + bx + c.</p>
+                </div>
+
+                <div class="hub-feature-card" onclick="changeView('profil')">
+                    <div class="feature-card-icon" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24;">🏆</div>
+                    <h3>Gamification & Ecusoane</h3>
+                    <p>Acumulează XP, crește în rang de la 'Boboc LER' la 'Olimpic Racoviță' și deblochează ecusoane de excelență.</p>
+                </div>
+            </div>
+
+            <!-- Provocarea Zilei -->
+            <div id="daily-challenge-card" class="welcome-card daily-challenge-card">
+                <div class="daily-challenge-header">
+                    <h3 class="daily-challenge-title">🌟 Provocarea Zilei (Clasa a IX-a)</h3>
+                    <span id="challenge-type-badge" class="chapter-badge-chip math">Matematică / C++</span>
+                </div>
+                <p id="challenge-question" class="daily-challenge-question">Se încarcă provocarea zilei...</p>
+                <div class="daily-challenge-input-group">
+                    <input type="text" id="challenge-answer" placeholder="Introdu răspunsul tău (ex: 4, 15, swap)...">
+                    <button id="btn-challenge-submit">Verifică Răspunsul</button>
+                </div>
+                <div id="challenge-feedback" class="daily-challenge-feedback"></div>
+            </div>
+
+            <!-- DIGI-EQUAL Banner Informațional -->
+            <div class="digi-equal-banner">
+                <div class="digi-equal-content">
+                    <h3>🇪🇺 Sprijin pentru Incluziune și Egalitate de Șanse (DIGI-EQUAL)</h3>
+                    <p>Proiectul garantează acces liber și egal la resurse educaționale premium pentru toți elevii din Vaslui, reducând diferențele de pornire la liceu.</p>
+                </div>
+                <button class="btn-secondary" onclick="changeView('despre')">Află mai multe despre proiect →</button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             2. SECȚIUNEA LECȚII & CURRICULĂ
+             ========================================== -->
+        <section id="lectii" class="view hidden">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <h2>📚 Curriculă Interactivă Clasa a IX-a</h2>
+                    <p>Selectează materia și aprofundează noțiunile esențiale cu exemple practice și cod C++.</p>
+                </div>
+
+                <!-- Tabs de filtrare -->
+                <div class="curriculum-tabs-bar">
+                    <button class="btn-filter-tab active" onclick="filterCurriculum('all')">Toate (21)</button>
+                    <button class="btn-filter-tab" onclick="filterCurriculum('math')">🧮 Matematică IX (10)</button>
+                    <button class="btn-filter-tab" onclick="filterCurriculum('info')">💻 Informatică C++ (11)</button>
+                </div>
+            </div>
+
+            <!-- Bară de căutare -->
+            <div style="margin-bottom: 24px; display: flex; justify-content: flex-end;">
+                <div class="chapter-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="curriculum-search" placeholder="Caută capitol, algoritm sau formulă (ex: Viete, vectori, Euclid)..." oninput="handleCurriculumSearch(this.value)">
+                </div>
+            </div>
+
+            <!-- Gridul Capitolelor -->
+            <div class="chapter-grid" id="chapter-list">
+                <!-- Se populează dinamic din JS -->
+            </div>
+        </section>
+
+        <!-- Detalii Capitol Reader View -->
+        <section id="chapter-detail" class="view hidden">
+            <button onclick="changeView('lectii')" class="btn-back-nav">⬅ Înapoi la Lista de Lecții</button>
+            <div id="detail-content" class="chapter-reader">
+                <!-- Conținutul detaliat al capitolului -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. SECȚIUNEA ⚔️ H2H ARENA (HEAD-TO-HEAD)
+             ========================================== -->
+        <section id="competitie" class="view hidden">
+            <div class="arena-header-banner">
+                <h2>⚔️ H2H Arena – Dueluri de Cunoștințe</h2>
+                <p>Măsoară-ți viteza și acuratețea la matematică și C++ în quiz-uri contracronometru concepute pentru elevii de la Liceul Teoretic „Emil Racoviță”!</p>
+            </div>
+
+            <!-- Selectare Mod Joc (Lobby) -->
+            <div id="arena-lobby-screen">
+                <div class="arena-modes-grid">
+                    <!-- Mod 1: VS Bot AI Challenger -->
+                    <div class="arena-mode-card" onclick="startBotDuelPrompt()">
+                        <div class="arena-mode-icon">🤖</div>
+                        <h3>Duel vs Bot LER</h3>
+                        <p>Antrenează-te împotriva unui oponent virtual inteligent: alege între Boboc LER, Elev Silitor sau Olimpic Racoviță!</p>
+                        <button class="btn-start-mode">Luptă cu Botul →</button>
+                    </div>
+
+                    <!-- Mod 2: 1v1 Split-Screen Local -->
+                    <div class="arena-mode-card" onclick="startLocalSplitDuel()">
+                        <div class="arena-mode-icon">👥</div>
+                        <h3>1v1 Duel Local</h3>
+                        <p>Doi elevi pe același ecran/tastatură! Cel care dă primul răspunsul corect înainte de expirarea timpului ia runda.</p>
+                        <button class="btn-start-mode">Pornește Duelul 1v1 →</button>
+                    </div>
+
+                    <!-- Mod 3: Multiplayer Online Lobby -->
+                    <div class="arena-mode-card">
+                        <div class="arena-mode-icon">🌐</div>
+                        <h3>Multiplayer Online</h3>
+                        <p>Creează o cameră privată și trimite codul PIN colegului tău pentru un duel sincronizat în rețea.</p>
+                        <div style="display: flex; gap: 8px; margin-top: 14px;">
+                            <button onclick="createRoom()" class="btn-start-mode" style="background: var(--grad-emerald);">Creează</button>
+                            <button onclick="promptJoinRoom()" class="btn-start-mode" style="background: var(--grad-indigo);">Alătură-te</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Setări Duel (Categorie întrebări) -->
+                <div class="welcome-card" style="text-align: center; max-width: 580px; margin: 0 auto; padding: 20px;">
+                    <label style="font-weight: 700; color: var(--text-400); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; display: block;">Materia Duelului:</label>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <button class="btn-filter-tab active" id="btn-subject-all" onclick="setDuelSubject('all')">Mixt MathInfo</button>
+                        <button class="btn-filter-tab" id="btn-subject-math" onclick="setDuelSubject('math')">Doar Matematică</button>
+                        <button class="btn-filter-tab" id="btn-subject-info" onclick="setDuelSubject('info')">Doar C++ Informatică</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mod În Așteptare Cameră Online (mp-waiting) -->
+            <div id="mp-waiting" class="hidden welcome-card" style="text-align: center; max-width: 540px; margin: 0 auto; padding: 40px;">
+                <div class="loading-spinner" style="margin: 0 auto 20px; width: 44px; height: 44px; border: 4px solid rgba(255,255,255,0.1); border-top-color: var(--cyber-cyan); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+                <h3>Se așteaptă adversarul în cameră...</h3>
+                <p style="margin-top: 10px; color: var(--text-500);">Codul camerei tale este:</p>
+                <div id="mp-room-code-display" style="font-family: 'JetBrains Mono', monospace; font-size: 3rem; font-weight: 900; color: var(--cyber-cyan); letter-spacing: 6px; margin: 14px 0;">------</div>
+                <p style="font-size: 0.85rem; color: var(--text-400);">Trimite acest cod colegului tău pentru a începe duelul!</p>
+                <button onclick="cancelWaitingRoom()" class="btn-secondary" style="margin-top: 20px;">Anulează</button>
+            </div>
+
+            <!-- Ecran de Luptă Activ (Live Battle Screen) -->
+            <div id="battle-active-screen" class="hidden battle-arena-panel">
+                <!-- Scoreboard Luptă -->
+                <div class="battle-scoreboard">
+                    <div class="fighter-card player1">
+                        <div class="fighter-avatar" id="battle-p1-avatar">😎</div>
+                        <div class="fighter-info">
+                            <h4 id="battle-p1-name">Jucător 1</h4>
+                            <div class="fighter-score" id="battle-p1-score">0</div>
+                        </div>
+                    </div>
+
+                    <div class="vs-badge-emblem">VS</div>
+
+                    <div class="fighter-card player2">
+                        <div class="fighter-avatar" id="battle-p2-avatar">🤖</div>
+                        <div class="fighter-info">
+                            <h4 id="battle-p2-name">Bot LER</h4>
+                            <div class="fighter-score" id="battle-p2-score">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Întrebare Luptă -->
+                <div class="battle-question-card">
+                    <div class="battle-timer-bar-wrap">
+                        <div id="battle-timer-bar" class="battle-timer-bar"></div>
+                    </div>
+
+                    <div class="battle-meta-status">
+                        <span id="battle-round-badge" class="round-pill">Runda 1/5 • Matematică</span>
+                        <span id="battle-timer-text" class="timer-countdown">20s</span>
+                    </div>
+
+                    <h3 id="battle-question-text" class="battle-question-text">Se încarcă întrebarea...</h3>
+
+                    <!-- Opțiuni Grilă pentru Mod Bot / Online -->
+                    <div id="battle-options-container" class="battle-options-grid">
+                        <!-- Opțiuni generate din JS -->
+                    </div>
+
+                    <!-- Inputuri pentru Modul 1v1 Split Local -->
+                    <div id="battle-split-inputs" class="hidden" style="display: flex; gap: 20px; max-width: 600px; margin: 0 auto;">
+                        <div style="flex: 1;">
+                            <label style="color: var(--cyber-cyan); font-size: 0.8rem; display: block; margin-bottom: 6px;" id="split-p1-label">Jucător 1 (Tastează + Enter)</label>
+                            <input type="text" id="split-input-0" placeholder="Răspuns..." style="width: 100%; padding: 12px; border-radius: var(--r-md); background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); color: #FFF; text-align: center;" autocomplete="off">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="color: var(--accent-rose); font-size: 0.8rem; display: block; margin-bottom: 6px;" id="split-p2-label">Jucător 2 (Tastează + Enter)</label>
+                            <input type="text" id="split-input-1" placeholder="Răspuns..." style="width: 100%; padding: 12px; border-radius: var(--r-md); background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); color: #FFF; text-align: center;" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div id="battle-feedback-msg" class="battle-feedback-msg"></div>
+                </div>
+            </div>
+
+            <!-- Ecran Rezultate Luptă (Battle Results) -->
+            <div id="battle-results-screen" class="hidden welcome-card battle-results-panel">
+                <div class="results-trophy-icon" id="results-winner-icon">🏆</div>
+                <h2 id="results-winner-title" style="font-size: 2.3rem; margin-bottom: 8px;">Ai Câștigat Duelul!</h2>
+                <p id="results-winner-subtitle" style="font-size: 1.15rem; color: var(--text-500); margin-bottom: 24px;">Scor Final: 40 - 20</p>
+                <div style="display: flex; gap: 14px; justify-content: center;">
+                    <button onclick="resetArenaToLobby()" class="btn-primary">Înapoi la Arenă</button>
+                    <button onclick="changeView('profil')" class="btn-secondary">Vezi Rang & XP</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             4. SECȚIUNEA 🤖 MATHINFO AI
+             ========================================== -->
+        <section id="explica" class="view hidden">
+            <div class="ai-section-wrapper">
+                <!-- Header Asistent -->
+                <div class="ai-header-card">
+                    <div>
+                        <h2 style="font-size: 1.6rem; display: flex; align-items: center; gap: 10px;">
+                            🤖 MathInfo AI Mentor
+                        </h2>
+                        <p style="font-size: 0.88rem; color: var(--text-500); margin-top: 4px;">
+                            Antrenat pe programa de clasa a IX-a: Algebră, Geometrie, Trigonometrie și Algoritmică C++.
+                        </p>
+                    </div>
+                    <div class="ai-status-indicator">
+                        <div class="ai-status-dot"></div>
+                        <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent-emerald);">ACTIV 24/7 (LER)</span>
+                    </div>
+                </div>
+
+                <!-- Butoane Presetate cu Întrebări Frecvente -->
+                <div class="preset-prompts-bar">
+                    <button class="prompt-pill" onclick="askAiPreset('Cum determin rădăcinile ecuației de gradul II și relațiile lui Viète?')">🎯 Ecuația de Gradul II</button>
+                    <button class="prompt-pill" onclick="askAiPreset('Cum verific eficient în C++ dacă un număr este prim în O(radical din n)?')">✨ Verificare Număr Prim C++</button>
+                    <button class="prompt-pill" onclick="askAiPreset('Explică-mi formulele termenului general și ale sumei pentru progresiile aritmetice.')">📈 Progresii Aritmetice</button>
+                    <button class="prompt-pill" onclick="askAiPreset('Cum funcționează algoritmul lui Euclid pentru CMMDC prin împărțiri repetate în C++?')">⚡ Algoritmul lui Euclid</button>
+                    <button class="prompt-pill" onclick="askAiPreset('Care este formula fundamentală a trigonometriei și valorile remarcabile pentru 30, 45 și 60 de grade?')">🔄 Trigonometrie de Bază</button>
+                </div>
+
+                <!-- Fereastră Chat -->
+                <div id="chat-window">
+                    <div id="chat-messages">
+                        <div class="message ai-message">
+                            Salut! Sunt <strong>MathInfo AI</strong>, asistentul tău inteligent la Matematică și Informatică pentru clasa a IX-a din LER Vaslui. Cu ce exercițiu, formulă sau cod C++ te pot ajuta astăzi? 💡
+                        </div>
+                    </div>
+                    <div id="ai-typing" class="hidden">⚡ MathInfo AI gândește răspunsul...</div>
+
+                    <div class="chat-input-area">
+                        <div class="chat-level">
+                            <label><input type="radio" name="level" value="simple" checked> Explicație Simplă (Pas cu pas)</label>
+                            <label><input type="radio" name="level" value="detailed"> Detaliat & Riguros (Olimpiadă/Teză)</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="chat-input" placeholder="Scrie aici întrebarea ta (ex: Cum se inversează un număr în C++?)..." autocomplete="off">
+                            <button id="btn-chat-mic" class="btn-chat-control" title="Vorbește cu asistentul">🎤</button>
+                            <button id="btn-tts-toggle" class="btn-chat-control" title="Pornește/Oprește citirea vocală">🔊</button>
+                            <button id="btn-chat-send">Trimite</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-answer-area" style="margin-top: 14px;"></div>
+                <div id="suggestion-area" style="margin-top: 14px;"></div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             5. SECȚIUNEA 💻 C++ & MATH INTERACTIVE LAB
+             ========================================== -->
+        <section id="laborator" class="view hidden">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <h2>💻 Code & Math Interactive Lab</h2>
+                    <p>Experimentează direct cu algoritmi C++ animați și grafice matematice interactive.</p>
+                </div>
+
+                <div class="lab-navigation-tabs">
+                    <button class="btn-lab-tab active" onclick="switchLabSubtab('visualizer')">📊 Visualizer C++</button>
+                    <button class="btn-lab-tab" onclick="switchLabSubtab('graph')">📈 Grafice Funcții (Parabolă)</button>
+                    <button class="btn-lab-tab" onclick="switchLabSubtab('geometry')">📐 Desen & Magic Geo</button>
+                </div>
+            </div>
+
+            <!-- Subtab 1: Algoritm Visualizer C++ -->
+            <div id="lab-subtab-visualizer" class="visualizer-card">
+                <div class="vis-controls-bar">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <label style="font-size: 0.85rem; font-weight: 700; color: var(--cyber-cyan);">Algoritm:</label>
+                        <select id="vis-algorithm-select" onchange="changeVisAlgorithm(this.value)" style="padding: 8px 12px; border-radius: var(--r-md); background: #0B101E; border: 1px solid var(--border-glass); color: #FFF; font-size: 0.88rem;">
+                            <option value="bubblesort">Bubble Sort (Metoda Bulelor)</option>
+                            <option value="prime">Testare Primalitate O(√n)</option>
+                            <option value="reverse">Prelucrare Cifre (Oglindit Număr)</option>
+                            <option value="euclid">CMMDC - Algoritmul lui Euclid</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="runAlgorithmSimulation()" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">▶ Rulează Pas cu Pas</button>
+                        <button onclick="resetAlgorithmSimulation()" class="btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🔄 Resetează Date</button>
+                    </div>
+                </div>
+
+                <!-- Zona de animație bare / elemente -->
+                <div id="vis-canvas-container" class="vis-bars-container">
+                    <!-- Bare generate din JS -->
+                </div>
+
+                <div id="vis-info-panel" class="vis-info-panel">
+                    💡 Selectează un algoritm și apasă 'Rulează Pas cu Pas' pentru a vedea cum se execută fiecare instrucțiune în memorie!
+                </div>
+            </div>
+
+            <!-- Subtab 2: Grafice Matematice Interactive (Parabolă & Dreaptă) -->
+            <div id="lab-subtab-graph" class="visualizer-card hidden">
+                <div class="graph-lab-controls">
+                    <div class="slider-group">
+                        <label>a: <span id="val-a">1</span></label>
+                        <input type="range" id="slider-a" min="-5" max="5" step="0.5" value="1" oninput="updateFunctionPlot()">
+                    </div>
+                    <div class="slider-group">
+                        <label>b: <span id="val-b">-2</span></label>
+                        <input type="range" id="slider-b" min="-10" max="10" step="1" value="-2" oninput="updateFunctionPlot()">
+                    </div>
+                    <div class="slider-group">
+                        <label>c: <span id="val-c">-3</span></label>
+                        <input type="range" id="slider-c" min="-10" max="10" step="1" value="-3" oninput="updateFunctionPlot()">
+                    </div>
+                </div>
+
+                <canvas id="function-canvas" class="graph-canvas" width="800" height="380"></canvas>
+                <div id="function-math-stats" class="vis-info-panel" style="margin-top: 14px;">
+                    Funcția: f(x) = x² - 2x - 3 | Δ = 16 | Rădăcini: x₁ = -1, x₂ = 3 | Vârf: V(1, -4)
+                </div>
+            </div>
+
+            <!-- Subtab 3: Desen & Geometrie -->
+            <div id="lab-subtab-geometry" class="visualizer-card hidden">
+                <div class="vis-controls-bar">
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button onclick="geoLab.setShape('square')" class="btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">Pătrat</button>
+                        <button onclick="geoLab.setShape('rect')" class="btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">Dreptunghi</button>
+                        <button onclick="geoLab.setShape('circle')" class="btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">Cerc</button>
+                        <button onclick="geoLab.setShape('manual')" class="btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">✏️ Desen Liber</button>
+                        <button onclick="geoLab.recognizeShape()" class="btn-primary" style="padding: 6px 14px; font-size: 0.82rem;">🪄 Recunoaște Magic</button>
+                        <button onclick="geoLab.clear()" class="btn-secondary" style="padding: 6px 14px; font-size: 0.82rem; color: #FCA5A5;">🗑️ Curăță</button>
+                    </div>
+                </div>
+
+                <div id="geo-controls" style="display: flex; gap: 16px; margin-bottom: 12px;">
+                    <div id="group-side">
+                        <label style="font-size: 0.8rem; color: var(--text-500);">Latură / Rază:</label>
+                        <input type="number" id="input-l" value="100" min="10" max="300" oninput="geoLab.updateFromInputs()" style="padding: 6px 10px; border-radius: var(--r-sm); background: #000; border: 1px solid var(--border-glass); color: #FFF; width: 80px;">
+                    </div>
+                    <div id="group-rect" class="hidden">
+                        <label style="font-size: 0.8rem; color: var(--text-500);">Lățime:</label>
+                        <input type="number" id="input-w" value="150" min="10" max="400" oninput="geoLab.updateFromInputs()" style="padding: 6px 10px; border-radius: var(--r-sm); background: #000; border: 1px solid var(--border-glass); color: #FFF; width: 80px;">
+                        <label style="font-size: 0.8rem; color: var(--text-500); margin-left: 10px;">Înălțime:</label>
+                        <input type="number" id="input-h" value="80" min="10" max="300" oninput="geoLab.updateFromInputs()" style="padding: 6px 10px; border-radius: var(--r-sm); background: #000; border: 1px solid var(--border-glass); color: #FFF; width: 80px;">
+                    </div>
+                </div>
+
+                <canvas id="geo-canvas" width="700" height="300" style="background: #080C14; border: 1px solid var(--border-glass); border-radius: var(--r-md); width: 100%; display: block;"></canvas>
+                <div id="geo-stats" class="vis-info-panel" style="margin-top: 14px;">Arie: 0 | Perimetru: 0</div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             6. SECȚIUNEA 🏫 CLASĂ LER
+             ========================================== -->
+        <section id="clasa" class="view hidden">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <h2>🏫 Modul Clasă – Liceul Teoretic „Emil Racoviță”</h2>
+                    <p>Clasament pe clase (9A, 9B, 9C, 9D) și gestiunea temelor la Matematică și Informatică.</p>
+                </div>
+
+                <div class="class-tab-row">
+                    <button onclick="switchClassTab('ranking')" class="btn-tab active-tab" id="tab-ranking">🏆 Clasament Clasă</button>
+                    <button onclick="switchClassTab('homework')" class="btn-tab" id="tab-homework">📝 Teme & Rezolvări</button>
+                </div>
+            </div>
+
+            <!-- Tab Clasament -->
+            <div id="class-tab-ranking">
+                <div class="welcome-card" style="margin-bottom: 24px;">
+                    <h3>Alătură-te clasei tale din LER</h3>
+                    <div style="display: flex; gap: 12px; max-width: 440px; margin-top: 12px;">
+                        <input type="text" id="join-class-code" placeholder="Ex: 9A-LER sau codul profesorului..." style="flex: 1; padding: 12px; border-radius: var(--r-md); background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: #FFF;">
+                        <button onclick="joinClass()" class="btn-primary">Înscrie-te</button>
+                    </div>
+                </div>
+
+                <div id="class-ranking-card" class="welcome-card class-ranking-card">
+                    <h3>🏆 Clasament Clasă: <span id="ranking-class-name">9A - Matematică-Informatică</span> (Cod: <span id="ranking-class-code">LER9A</span>)</h3>
+                    <div class="ranking-table-wrap">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>Loc</th>
+                                    <th>Elev</th>
+                                    <th>Exerciții</th>
+                                    <th>Dueluri H2H</th>
+                                    <th>XP</th>
+                                    <th>Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ranking-body">
+                                <tr>
+                                    <td>🥇 1</td>
+                                    <td><strong>Andrei Popa</strong></td>
+                                    <td>42</td>
+                                    <td>18 Victorii</td>
+                                    <td style="color: var(--accent-amber);">1450 XP</td>
+                                    <td><span class="home-badge" style="background: rgba(16, 185, 129, 0.2); color: #6EE7B7;">Olimpic</span></td>
+                                </tr>
+                                <tr>
+                                    <td>🥈 2</td>
+                                    <td><strong>Elena Vasilescu</strong></td>
+                                    <td>36</td>
+                                    <td>12 Victorii</td>
+                                    <td style="color: var(--accent-amber);">1120 XP</td>
+                                    <td><span class="home-badge">Avansat</span></td>
+                                </tr>
+                                <tr>
+                                    <td>🥉 3</td>
+                                    <td><strong>Mihai Ionescu</strong></td>
+                                    <td>28</td>
+                                    <td>9 Victorii</td>
+                                    <td style="color: var(--accent-amber);">890 XP</td>
+                                    <td><span class="home-badge">Boboc</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Teme -->
+            <div id="class-tab-homework" class="hidden">
+                <div class="welcome-card">
+                    <h3>📚 Temele Mele Active</h3>
+                    <div id="student-homework-list" style="margin-top: 14px;">
+                        <div style="padding: 16px; background: rgba(255,255,255,0.03); border-radius: var(--r-md); border-left: 4px solid var(--primary-400); margin-bottom: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong>Tema 1: Ecuații de gradul II și relațiile lui Viète</strong>
+                                <span style="font-size: 0.8rem; color: #FCA5A5;">Scadență: 3 zile</span>
+                            </div>
+                            <p style="font-size: 0.88rem; color: var(--text-500); margin-top: 6px;">
+                                Rezolvați exercițiile din capitolul 6 și calculați suma și produsul rădăcinilor.
+                            </p>
+                            <button class="btn-secondary" style="margin-top: 10px; padding: 6px 14px; font-size: 0.82rem;" onclick="changeView('lectii')">Deschide Capitolul →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             7. SECȚIUNEA 🏆 PROFIL & RANGURI
+             ========================================== -->
+        <section id="profil" class="view hidden">
+            <div class="welcome-card" style="margin-bottom: 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+                <div style="width: 72px; height: 72px; border-radius: var(--r-full); background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: var(--glow-primary);">
+                    🎓
+                </div>
+                <div>
+                    <h2 id="profile-username" style="font-size: 1.8rem; margin-bottom: 4px;">Boboc LER</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-500);">Liceul Teoretic „Emil Racoviță” Vaslui • Clasa a IX-a</p>
+                </div>
+            </div>
+
+            <!-- Card Statistici Cheie -->
+            <div class="profile-stats-card">
+                <div class="stat-box-modern">
+                    <span class="stat-label">Capitole Explorate</span>
+                    <strong class="stat-value" id="stat-chapters">0/21</strong>
+                </div>
+                <div class="stat-box-modern">
+                    <span class="stat-label">Exerciții Corecte</span>
+                    <strong class="stat-value" id="stat-exercises" style="color: var(--accent-emerald);">0</strong>
+                </div>
+                <div class="stat-box-modern">
+                    <span class="stat-label">Dueluri H2H Câștigate</span>
+                    <strong class="stat-value" id="stat-duel-wins" style="color: var(--cyber-cyan);">0</strong>
+                </div>
+                <div class="stat-box-modern">
+                    <span class="stat-label">Total Puncte XP</span>
+                    <strong class="stat-value" id="stat-xp" style="color: var(--accent-amber);">0</strong>
+                </div>
+            </div>
+
+            <!-- Ecusoane (Badges) -->
+            <div class="welcome-card" style="margin-bottom: 28px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 8px;">⭐ Ecusoane de Performanță</h3>
+                <p style="font-size: 0.88rem; color: var(--text-500); margin-bottom: 16px;">Deblochează insigne demonstrându-ți cunoștințele la Matematică și C++.</p>
+                
+                <div class="badge-grid-modern" id="badge-list">
+                    <!-- Populat din JS -->
+                </div>
+            </div>
+
+            <!-- Grafic Evoluție Săptămânală -->
+            <div class="welcome-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 16px;">📊 Evoluția Ta Săptămânală</h3>
+                <canvas id="progress-chart" height="180"></canvas>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             8. SECȚIUNEA ℹ️ DESPRE PROIECT (ERASMUS+ & DIGI-EQUAL)
+             ========================================== -->
+        <section id="despre" class="view hidden">
+            <div class="about-project-container">
+                <div class="about-hero-card">
+                    <span class="home-badge erasmus-badge" style="margin-bottom: 14px;">Proiect Erasmus+ DIGI-EQUAL</span>
+                    <h2>MathInfo 9 H2H – Learn & Arena</h2>
+                    <p>
+                        O inițiativă educațională dedicată elevilor de clasa a IX-a din <strong>Liceul Teoretic „Emil Racoviță” Vaslui</strong>, creată pentru a asigura egalitatea de șanse, reducerea decalajelor de învățare și stimularea performanței prin gamification și Inteligență Artificială.
+                    </p>
+                </div>
+
+                <!-- Structura celor 11 Puncte Cheie -->
+                <div class="about-points-grid">
+                    <div class="about-point-card">
+                        <span class="about-point-badge">01</span>
+                        <h3>Mobilitatea Aleasă</h3>
+                        <p><strong>Vaslui, România</strong> (Liceul Teoretic „Emil Racoviță” Vaslui - LER). Proiectul este creat local pentru nevoile specifice ale bobocilor de clasa a IX-a, facilitând adaptarea lor la exigențele de liceu.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">02</span>
+                        <h3>Titlul Produsului</h3>
+                        <p><strong>„MathInfo 9 H2H – Learn & Arena”</strong>: platformă web interactivă ce îmbină învățarea riguroasă a matematicii și informaticii cu duelurile dinamice Head-to-Head.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">03</span>
+                        <h3>Ideea și Scopul</h3>
+                        <p>Crearea unui spațiu digital complet cu <strong>Asistent AI 24/7</strong> și modul <strong>H2H contracronometru</strong>, transformând învățarea materiilor reale într-o experiență atractivă și accesibilă.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">04</span>
+                        <h3>Grupul-Țintă</h3>
+                        <p>Elevii clasei a IX-a din LER Vaslui. Răspunde nevoii de a depăși dificultățile inițiale la algebră, geometrie și algoritmică C++, reducând frica de greșeală.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">05</span>
+                        <h3>Obiectivele DIGI-EQUAL</h3>
+                        <p>Integrează tehnologii digitale de ultimă generație (AI, quiz-uri sincronizate în timp real, simulări de algoritmi) pentru a susține digitalizarea activă a școlii românești.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">06</span>
+                        <h3>Incluziune & Șanse Egale</h3>
+                        <p>Asistentul AI oferă meditații și explicații <strong>complet gratuite 24/7</strong>, oferind șanse egale tuturor elevilor, indiferent de mediul socio-economic sau de nivelul inițial de pornire.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">07</span>
+                        <h3>Tehnologii Utilizate</h3>
+                        <p>Frontend modern (HTML5, CSS avansat, JS modular, Web Audio API, Canvas), Motoare de sincronizare H2H, Integrare Asistent AI și backend extensibil Firebase/Supabase.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">08</span>
+                        <h3>Etapele de Realizare</h3>
+                        <p>1. Maparea curriculei de clasa a IX-a • 2. Construirea UI-ului modern și a AI-ului • 3. Dezvoltarea arenei H2H • 4. Testare pilot în LER • 5. Diseminare.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">09</span>
+                        <h3>Implicarea Claselor X-XII</h3>
+                        <p>Elevii de elită din clasele mari contribuie ca mentori prin crearea de noi probleme, verificarea răspunsurilor AI-ului și organizarea duelurilor amicale.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">10</span>
+                        <h3>Diseminare în Școală</h3>
+                        <p>Derularea mini-turneelor „MathInfo H2H” la orele de informatică, promovarea pe grupurile claselor și afișe interactive cu cod QR în incinta liceului.</p>
+                    </div>
+
+                    <div class="about-point-card">
+                        <span class="about-point-badge">11</span>
+                        <h3>Transferabilitate Erasmus+</h3>
+                        <p>Codul și structura modulară pot fi extinse cu ușurință pentru clasele a X-a – a XII-a sau pot fi adoptate de alte licee partenere din rețeaua Erasmus+ din Europa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             9. SECȚIUNEA CONECTARE / LOGIN
+             ========================================== -->
+        <section id="login" class="view hidden">
+            <div class="auth-layout">
+                <div>
+                    <span class="home-badge" style="margin-bottom: 12px;">Profil & Progres LER</span>
+                    <h2 style="font-size: 2rem; margin-bottom: 12px; color: #FFF;">Conectează-te la Contul Tău</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-500); line-height: 1.6; margin-bottom: 20px;">
+                        Salvează-ți progresul la capitole, scorurile din Arena H2H și deblochează ecusoane de prestigiu pentru clasa a IX-a.
+                    </p>
+                    <button onclick="loginAsGuest()" class="btn-secondary" style="width: 100%; justify-content: center; padding: 12px;">
+                        ⚡ Intră Rapid ca Vizitator / Elev LER
+                    </button>
+                </div>
+
+                <div class="auth-card">
+                    <div id="auth-form-container">
+                        <h3 id="auth-title" style="font-size: 1.4rem; margin-bottom: 6px; color: #FFF;">Conectare Elev</h3>
+                        <p id="auth-subtitle" style="font-size: 0.85rem; color: var(--text-500); margin-bottom: 20px;">Introdu numele de utilizator și parola.</p>
+
+                        <div class="auth-input-wrapper">
+                            <span class="auth-icon">👤</span>
+                            <input type="text" id="login-username" placeholder="Nume utilizator (ex: Andrei_9A)">
+                        </div>
+
+                        <div class="auth-input-wrapper">
+                            <span class="auth-icon">🔒</span>
+                            <input type="password" id="login-password" placeholder="Parolă">
+                        </div>
+
+                        <button onclick="handleLogin()" class="btn-auth" id="btn-auth-action">Intră în Cont</button>
+
+                        <p style="text-align: center; margin-top: 16px; font-size: 0.85rem; color: var(--text-500);">
+                            Nu ai cont? <a href="#" onclick="toggleAuthMode()">Creează cont nou</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>
+            &copy; 2026 <strong>MathInfo 9 H2H – Learn & Arena</strong> • Proiect educațional creat pentru elevii de clasa a IX-a din <strong>Liceul Teoretic „Emil Racoviță” Vaslui</strong> în cadrul programului <strong>Erasmus+ DIGI-EQUAL</strong>.
+        </p>
+    </footer>
+
+    <!-- Toast de Notificare -->
+    <div id="auth-toast" class="auth-toast hidden"></div>
+
+    <!-- Scriptul Principal -->
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>

@@ -1,0 +1,1248 @@
+[
+    {
+        "id": "mate9_multimi_logica",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Algebră",
+        "title": "1. Mulțimi, Logică Matematică și Inducție",
+        "icon": "📐",
+        "difficulty": "Mediu",
+        "keywords": [
+            "multimi",
+            "logica",
+            "inductie",
+            "cuantificatori",
+            "intersectie",
+            "reuniune",
+            "diferenta",
+            "cardinal",
+            "implicatie",
+            "echivalenta"
+        ],
+        "summary": "Operații fundamentale cu mulțimi (reuniune, intersecție, diferență, produs cartezian), propoziții logice, predicate, cuantificatori (universal și existențial) și principiul inducției matematice.",
+        "lessons": [
+            "Mulțimea este o colecție bine definită de obiecte distincte numite elemente.",
+            "Operații cu mulțimi: Reuniunea (A ∪ B = {x | x ∈ A sau x ∈ B}), Intersecția (A ∩ B = {x | x ∈ A și x ∈ B}), Diferența (A \\ B = {x | x ∈ A și x ∉ B}), Complementara (C_E(A) = E \\ A).",
+            "Produsul cartezian: A × B = {(x, y) | x ∈ A și y ∈ B}. Cardinalul produsului: |A × B| = |A| · |B|.",
+            "Propoziții logice: Valoarea de adevăr poate fi Adevărat (1) sau Fals (0). Conectori: Negația (¬p), Conjuncția (p ∧ q), Disjuncția (p ∨ q), Implicația (p → q), Echivalența (p ↔ q).",
+            "Cuantificatori: Universal (∀ - 'oricare ar fi') și Existențial (∃ - 'există cel puțin un'). Negarea: ¬(∀x, P(x)) ≡ ∃x, ¬P(x).",
+            "Principiul Inducției Matematice: Pentru a demonstra că P(n) este adevărată ∀n ≥ n₀: 1) Etapa de verificare: demonstrăm P(n₀); 2) Etapa de inducție: presupunem P(k) adevărată și demonstrăm P(k+1)."
+        ],
+        "examples": [
+            "Fie A = {1, 2, 3} și B = {2, 3, 4}. Atunci: A ∪ B = {1, 2, 3, 4}, A ∩ B = {2, 3}, A \\ B = {1}.",
+            "Calculați suma primelor n numere naturale prin inducție: S_n = 1 + 2 + ... + n = n(n+1)/2. Pentru n = 1: S₁ = 1·2/2 = 1 (A). Presupunem pt k: S_k = k(k+1)/2. Pt k+1: S_(k+1) = S_k + (k+1) = (k+1)(k+2)/2 (A)."
+        ],
+        "formulas": [
+            "A ∪ B = {x | x ∈ A ∨ x ∈ B}",
+            "A ∩ B = {x | x ∈ A ∧ x ∈ B}",
+            "|A ∪ B| = |A| + |B| - |A ∩ B|",
+            "1 + 2 + ... + n = n(n+1)/2"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă |A| = 5, |B| = 4 și |A ∩ B| = 2, cât este |A ∪ B|?",
+                "answer": "7"
+            },
+            {
+                "question": "Fie A = {1, 3, 5} și B = {2, 3, 4}. Care este A ∩ B?",
+                "answer": "{3}"
+            },
+            {
+                "question": "Care este valoarea de adevăr a implicației Fals → Adevărat? (A/F)",
+                "answer": "A"
+            }
+        ],
+        "dictionary": {
+            "Cardinal": "Numărul de elemente al unei mulțimi finite.",
+            "Predicat": "O propoziție a cărei valoare de adevăr depinde de una sau mai multe variabile.",
+            "Tautologie": "O formulă logică care este adevărată pentru orice combinație a valorilor de adevăr ale propozițiilor componente."
+        },
+        "fun_facts": [
+            "Paradoxul lui Russell a zguduit teoria mulțimilor la începutul sec. XX punând întrebarea: 'Mulțimea tuturor mulțimilor care nu se conțin pe ele însele se conține pe sine?'"
+        ]
+    },
+    {
+        "id": "mate9_siruri_progresii_aritm",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Algebră",
+        "title": "2. Șiruri de Numere Reale. Progresii Aritmetice",
+        "icon": "📈",
+        "difficulty": "Mediu",
+        "keywords": [
+            "siruri",
+            "progresii aritmetice",
+            "ratie",
+            "termen general",
+            "suma",
+            "monotonie",
+            "marginit"
+        ],
+        "summary": "Noțiunea de șir numeric (termen general, monotonie, mărginire). Progresia aritmetică: rație, formula termenului general a_n = a_1 + (n-1)r și suma primilor n termeni S_n.",
+        "lessons": [
+            "Un șir de numere reale este o funcție f : N* → R, notată (a_n)_(n≥1).",
+            "Un șir este strict crescător dacă a_(n+1) > a_n pentru orice n ≥ 1.",
+            "Un șir (a_n)_(n≥1) se numește progresie aritmetică dacă fiecare termen începând cu al doilea se obține din precedentul adunând o constantă r numită rație: a_(n+1) = a_n + r.",
+            "Formula termenului general: a_n = a_1 + (n - 1) · r.",
+            "Proprietate caracteristică: Trei termeni consecutivi a_(k-1), a_k, a_(k+1) sunt în progresie aritmetică dacă și numai dacă termenul din mijloc este media aritmetică a vecinilor: a_k = (a_(k-1) + a_(k+1)) / 2.",
+            "Formula sumei primilor n termeni: S_n = n · (a_1 + a_n) / 2 = n · [2a_1 + (n - 1)r] / 2."
+        ],
+        "examples": [
+            "Fie progresia aritmetică cu a_1 = 3 și r = 4. Termenii sunt: 3, 7, 11, 15, 19... Termenul al 10-lea: a_10 = 3 + 9·4 = 39.",
+            "Suma primilor 20 de termeni din șirul 2, 5, 8, 11...: a_1 = 2, r = 3, a_20 = 2 + 19·3 = 59. S_20 = 20 · (2 + 59) / 2 = 10 · 61 = 610."
+        ],
+        "formulas": [
+            "a_n = a_1 + (n - 1)r",
+            "r = a_(n+1) - a_n",
+            "a_k = (a_(k-1) + a_(k+1)) / 2",
+            "S_n = n(a_1 + a_n) / 2"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă a_1 = 5 și r = 3, cât este a_5?",
+                "answer": "17"
+            },
+            {
+                "question": "Dacă a_1 = 2 și a_3 = 10 într-o progresie aritmetică, cât este rația r?",
+                "answer": "4"
+            },
+            {
+                "question": "Calculați suma 1 + 3 + 5 + ... + 19.",
+                "answer": "100"
+            }
+        ],
+        "dictionary": {
+            "Rație": "Diferența constantă dintre oricare doi termeni consecutivi ai unei progresii aritmetice.",
+            "Medie aritmetică": "Suma termenilor împărțită la numărul lor."
+        },
+        "fun_facts": [
+            "Tânărul Carl Friedrich Gauss a uimit profesorul la 10 ani calculând suma 1 + 2 + ... + 100 în câteva secunde grupând termenii: 1+100=101, 2+99=101... 50 × 101 = 5050."
+        ]
+    },
+    {
+        "id": "mate9_progresii_geom",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Algebră",
+        "title": "3. Progresii Geometrice",
+        "icon": "⚡",
+        "difficulty": "Mediu",
+        "keywords": [
+            "progresie geometrica",
+            "ratie",
+            "termen general",
+            "suma",
+            "produs",
+            "putere"
+        ],
+        "summary": "Progresia geometrică: definiție, rația q, formula termenului general b_n = b_1 · q^(n-1), proprietatea mediei geometrice și formula sumei primilor n termeni.",
+        "lessons": [
+            "Un șir de termeni nenuli (b_n)_(n≥1) se numește progresie geometrică dacă fiecare termen începând cu al doilea se obține înmulțind precedentul cu o constantă nenulă q numită rație: b_(n+1) = b_n · q.",
+            "Formula termenului general: b_n = b_1 · q^(n - 1).",
+            "Proprietate caracteristică: Trei termeni pozitivi consecutivi sunt în progresie geometrică dacă și numai dacă b_k^2 = b_(k-1) · b_(k+1) (termenul din mijloc este media geometrică a vecinilor).",
+            "Suma primilor n termeni: Dacă q ≠ 1, S_n = b_1 · (q^n - 1) / (q - 1). Dacă q = 1, S_n = n · b_1."
+        ],
+        "examples": [
+            "Fie b_1 = 2 și q = 3. Șirul este: 2, 6, 18, 54, 162... Termenul al 5-lea este b_5 = 2 · 3^4 = 2 · 81 = 162.",
+            "Suma primilor 4 termeni pentru b_1 = 5, q = 2: S_4 = 5 · (2^4 - 1) / (2 - 1) = 5 · 15 = 75."
+        ],
+        "formulas": [
+            "b_n = b_1 · q^(n - 1)",
+            "q = b_(n+1) / b_n",
+            "b_k² = b_(k-1) · b_(k+1)",
+            "S_n = b_1 · (q^n - 1) / (q - 1)  (pt q ≠ 1)"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă b_1 = 3 și q = 2, cât este b_4?",
+                "answer": "24"
+            },
+            {
+                "question": "Dacă b_1 = 1 și q = 3, calculați S_3.",
+                "answer": "13"
+            },
+            {
+                "question": "Găsiți numărul pozitiv x astfel încât 2, x, 18 să fie în progresie geometrică.",
+                "answer": "6"
+            }
+        ],
+        "dictionary": {
+            "Medie geometrică": "Rădăcina pătrată a produsului a două numere reale pozitive: √(a · b)."
+        },
+        "fun_facts": [
+            "Legenda tablei de șah: inventatorul a cerut un bob de grâu pe primul pătrat, 2 pe al doilea, 4 pe al treilea... Suma 2⁶⁴ - 1 depășește producția mondială de grâu pe secole întregi!"
+        ]
+    },
+    {
+        "id": "mate9_functii_generale",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Algebră",
+        "title": "4. Funcții: Noțiuni Fundamentale",
+        "icon": "📊",
+        "difficulty": "Mediu",
+        "keywords": [
+            "functie",
+            "domeniu",
+            "codomeniu",
+            "imagine",
+            "monotonie",
+            "paritate",
+            "grafic",
+            "compunere"
+        ],
+        "summary": "Conceptul de funcție f : A → B, domeniu de definiție, codomeniu, mulțimea valorilor Im(f), monotonie (crescătoare/descrescătoare), paritate (funcții pare și impare) și compunerea funcțiilor.",
+        "lessons": [
+            "O funcție f : A → B este o lege prin care fiecărui element x ∈ A îi corespunde un element unic f(x) ∈ B.",
+            "Elemente: A = domeniul de definiție, B = codomeniul, f = legea de corespondență.",
+            "Imaginea funcției (mulțimea valorilor): Im(f) = f(A) = {f(x) | x ∈ A} ⊆ B.",
+            "Graficul funcției: G_f = {(x, f(x)) | x ∈ A} ⊆ A × B.",
+            "Monotonie: f este strict crescătoare dacă x₁ < x₂ ⇒ f(x₁) < f(x₂). f este strict descrescătoare dacă x₁ < x₂ ⇒ f(x₁) > f(x₂).",
+            "Paritate: f este pară dacă f(-x) = f(x) (graficul e simetric față de axa Oy). f este impară dacă f(-x) = -f(x) (graficul e simetric față de originea O).",
+            "Compunerea: (g ∘ f)(x) = g(f(x)), unde f : A → B și g : B → C."
+        ],
+        "examples": [
+            "Fie f : R → R, f(x) = x² - 1. Deoarece f(-x) = (-x)² - 1 = x² - 1 = f(x), funcția este pară.",
+            "Fie f(x) = 2x + 1 și g(x) = x². Atunci (g ∘ f)(x) = (2x + 1)² = 4x² + 4x + 1, iar (f ∘ g)(x) = 2x² + 1."
+        ],
+        "formulas": [
+            "Im(f) = {y ∈ B | ∃x ∈ A, f(x) = y}",
+            "f(-x) = f(x) ⇔ f este pară",
+            "f(-x) = -f(x) ⇔ f este impară",
+            "(g ∘ f)(x) = g(f(x))"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă f(x) = 3x - 2, calculați f(4).",
+                "answer": "10"
+            },
+            {
+                "question": "Este funcția f(x) = x³ pară sau impară?",
+                "answer": "impara"
+            },
+            {
+                "question": "Dacă f(x) = x + 2 și g(x) = 3x, cât este (g ∘ f)(1)?",
+                "answer": "9"
+            }
+        ],
+        "dictionary": {
+            "Bijectivă": "O funcție care este simultan injectivă și surjectivă.",
+            "Axa Oy": "Axa verticală a ordonatelor în reperul cartezian xOy."
+        },
+        "fun_facts": [
+            "Termenul de 'funcție' a fost introdus de Gottfried Wilhelm Leibniz în 1673 pentru a descrie o mărime legată de o curbă."
+        ]
+    },
+    {
+        "id": "mate9_functia_grad1",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Algebră",
+        "title": "5. Funcția de Gradul I",
+        "icon": "📏",
+        "difficulty": "Ușor",
+        "keywords": [
+            "functia de gradul 1",
+            "dreapta",
+            "panta",
+            "semnul functiei",
+            "inecuatii",
+            "radacina",
+            "intersectie axe"
+        ],
+        "summary": "Studiul funcției f : R → R, f(x) = ax + b (cu a ≠ 0). Graficul este o dreaptă de pantă a, semnul funcției de gradul I, rezolvarea inecuațiilor și a sistemelor.",
+        "lessons": [
+            "Forma generală: f(x) = ax + b, unde a, b ∈ R și a ≠ 0. Coeficientul 'a' reprezintă panta dreptei (tangenta unghiului făcut cu axa Ox).",
+            "Intersecția cu axele: Cu axa Ox: y = 0 ⇒ ax + b = 0 ⇒ x = -b/a ⇒ punctul A(-b/a, 0). Cu axa Oy: x = 0 ⇒ y = b ⇒ punctul B(0, b).",
+            "Monotonie: Dacă a > 0, funcția este strict crescătoare pe R. Dacă a < 0, funcția este strict descrescătoare pe R.",
+            "Tabelul de semn: Rădăcina este x = -b/a. Pentru x < -b/a, f(x) are semn contrar lui 'a'. Pentru x > -b/a, f(x) are semnul lui 'a'.",
+            "Inecuații: ax + b ≥ 0 se rezolvă citind intervalul corespunzător din tabelul de semn."
+        ],
+        "examples": [
+            "f(x) = 2x - 6. Rădăcina: 2x - 6 = 0 ⇒ x = 3. Deoarece a = 2 > 0: pentru x < 3, f(x) < 0; pentru x > 3, f(x) > 0. Punctele pe axe: (3, 0) și (0, -6).",
+            "Inecuația 3x - 9 > 0: x > 3 ⇒ x ∈ (3, +∞)."
+        ],
+        "formulas": [
+            "f(x) = ax + b  (a ≠ 0)",
+            "Rădăcina: x = -b / a",
+            "Punct Ox: (-b/a, 0) | Punct Oy: (0, b)",
+            "Semn: x < -b/a → semn contrar a | x > -b/a → semnul lui a"
+        ],
+        "exercises": [
+            {
+                "question": "Care este rădăcina funcției f(x) = 4x - 12?",
+                "answer": "3"
+            },
+            {
+                "question": "În ce punct intersectează graficul funcției f(x) = -2x + 8 axa Oy? (scrie y-ul)",
+                "answer": "8"
+            },
+            {
+                "question": "Dacă f(x) = -3x + 15, este funcția crescătoare sau descrescătoare?",
+                "answer": "descrescatoare"
+            }
+        ],
+        "dictionary": {
+            "Pantă": "Rata de variație a funcției, măsoară înclinația dreptei față de orizontală: m = a = tan(α)."
+        },
+        "fun_facts": [
+            "Graficul funcției de gradul I este cea mai simplă curbă netedă din geometria analitică — o dreaptă continuă și infinită."
+        ]
+    },
+    {
+        "id": "mate9_functia_grad2",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Algebră",
+        "title": "6. Funcția și Ecuația de Gradul II",
+        "icon": "🎯",
+        "difficulty": "Avansat",
+        "keywords": [
+            "gradul 2",
+            "parabola",
+            "discriminant",
+            "delta",
+            "radacini",
+            "varf",
+            "viete",
+            "semn",
+            "valoare extrema"
+        ],
+        "summary": "Studiul complet al funcției f(x) = ax² + bx + c (a ≠ 0). Discriminantul Δ = b² - 4ac, rădăcinile ecuației, vârful parabolei V(-b/2a, -Δ/4a), relațiile lui Viète și semnul trinomului.",
+        "lessons": [
+            "Forma canonică: f(x) = a(x + b/2a)² - Δ / (4a), unde Δ = b² - 4ac.",
+            "Rădăcinile ecuației ax² + bx + c = 0:",
+            "  - Dacă Δ > 0: două rădăcini reale distincte x₁, x₂ = (-b ± √Δ) / (2a).",
+            "  - Dacă Δ = 0: o rădăcină reală dublă x₁ = x₂ = -b / (2a).",
+            "  - Dacă Δ < 0: nu are rădăcini reale (rădăcini complexe).",
+            "Vârful Parabolei: V(-b/(2a), -Δ/(4a)). Dacă a > 0, parabola are ramurile în sus ('ține apa') și V este punct de MINIM. Dacă a < 0, ramurile sunt în jos și V este punct de MAXIM.",
+            "Relațiile lui Viète: Suma S = x₁ + x₂ = -b/a, Produsul P = x₁ · x₂ = c/a.",
+            "Semnul trinomului ax² + bx + c: Dacă Δ > 0, semn contrar lui 'a' între rădăcini (x₁ < x < x₂) și semnul lui 'a' în afara rădăcinilor. Dacă Δ ≤ 0, semnul lui 'a' pe tot R (cu anulare la x = -b/2a dacă Δ = 0)."
+        ],
+        "examples": [
+            "Rezolvați x² - 5x + 6 = 0: a = 1, b = -5, c = 6. Δ = (-5)² - 4·1·6 = 25 - 24 = 1. Rădăcinile: x₁,₂ = (5 ± 1) / 2 ⇒ x₁ = 2, x₂ = 3.",
+            "Relațiile lui Viète pentru 2x² - 8x + 6 = 0: S = -(-8)/2 = 4, P = 6/2 = 3.",
+            "Vârful funcției f(x) = x² - 4x + 3: x_v = -(-4)/(2·1) = 2, y_v = f(2) = 4 - 8 + 3 = -1. Deci V(2, -1) este punct de minim."
+        ],
+        "formulas": [
+            "Δ = b² - 4ac",
+            "x₁,₂ = (-b ± √Δ) / (2a)",
+            "V(-b / 2a, -Δ / 4a)",
+            "S = x₁ + x₂ = -b/a",
+            "P = x₁ · x₂ = c/a"
+        ],
+        "exercises": [
+            {
+                "question": "Calculați discriminantul Δ pentru ecuația x² - 6x + 9 = 0.",
+                "answer": "0"
+            },
+            {
+                "question": "Cât este suma rădăcinilor (Viète) pentru 2x² - 10x + 7 = 0?",
+                "answer": "5"
+            },
+            {
+                "question": "Aflați coordonata x a vârfului parabolei f(x) = x² - 8x + 5.",
+                "answer": "4"
+            }
+        ],
+        "dictionary": {
+            "Parabolă": "Curba plană descrisă de graficul funcției polinomiale de gradul II.",
+            "Discriminant": "Mărimea Δ = b² - 4ac care discriminează (distinge) natura rădăcinilor ecuației."
+        },
+        "fun_facts": [
+            "Oglinzile parabolice concentrează razele de lumină paralele exact în focarul parabolei — tehnologie folosită la telescoape, antene satelit și faruri auto."
+        ]
+    },
+    {
+        "id": "mate9_vectori_plan",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Geometrie",
+        "title": "7. Vectori în Plan",
+        "icon": "🏹",
+        "difficulty": "Mediu",
+        "keywords": [
+            "vectori",
+            "segment orientat",
+            "modul",
+            "directie",
+            "sens",
+            "adunare",
+            "regula triunghiului",
+            "coliniari",
+            "coordonate"
+        ],
+        "summary": "Segmente orientate, mărime (modul), direcție și sens. Operații cu vectori: adunarea (regula triunghiului și regula paralelogramului), înmulțirea cu scalari, vectori coliniari și descompunere în reper cartezian.",
+        "lessons": [
+            "Un vector liber v este caracterizat prin: direcție (dreapta suport), sens (orientarea de la origine la extremitate) și modul (lungimea segmentului, notată ||v|| sau |v|).",
+            "Adunarea vectorilor:",
+            "  - Regula triunghiului: Fie AB și BC doi vectori consecutivi. Atunci AB + BC = AC (regula lui Chasles).",
+            "  - Regula paralelogramului: Dacă vectorii au aceeași origine OA și OB, suma lor este diagonala OC a paralelogramului format.",
+            "Vectori coliniari: Doi vectori u și v sunt coliniari dacă au aceeași direcție (dreptele suport sunt paralele sau coincid): există k ∈ R* astfel încât u = k · v.",
+            "Vectorul de poziție al unui punct M(x, y): r_M = x·i + y·j, unde i și j sunt versorii axelor Ox și Oy.",
+            "Dacă A(x_A, y_A) și B(x_B, y_B), atunci vectorul AB = (x_B - x_A)·i + (y_B - y_A)·j, iar lungimea ||AB|| = √[(x_B - x_A)² + (y_B - y_A)²]."
+        ],
+        "examples": [
+            "Fie u = 3i + 4j. Modulul său este ||u|| = √(3² + 4²) = √(9 + 16) = √25 = 5.",
+            "Fie A(1, 2) și B(4, 6). Vectorul AB = (4 - 1)i + (6 - 2)j = 3i + 4j. Lungimea segmentului AB este 5."
+        ],
+        "formulas": [
+            "AB + BC = AC  (R. Chasles)",
+            "u = k · v  (condiție coliniaritate)",
+            "AB = (x_B - x_A)i + (y_B - y_A)j",
+            "||u|| = √(x² + y²)"
+        ],
+        "exercises": [
+            {
+                "question": "Calculați modulul vectorului v = 6i + 8j.",
+                "answer": "10"
+            },
+            {
+                "question": "Dacă u = 2i + 3j și v = 4i + 6j, sunt vectorii coliniari? (da/nu)",
+                "answer": "da"
+            },
+            {
+                "question": "Dacă A(2, 3) și B(5, 7), care este coordonata pe axa Ox a vectorului AB?",
+                "answer": "3"
+            }
+        ],
+        "dictionary": {
+            "Versor": "Un vector de lungime (modul) egală cu 1.",
+            "Coliniaritate": "Proprietatea vectorilor de a avea aceeași direcție (drepte suport paralele)."
+        },
+        "fun_facts": [
+            "Vectorii au fost inventați simultan în fizică și matematică în secolul al XIX-lea de Josiah Willard Gibbs și Oliver Heaviside pentru a simplifica ecuațiile electromagnetismului."
+        ]
+    },
+    {
+        "id": "mate9_trigonometrie_baza",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Trigonometrie",
+        "title": "8. Trigonometrie: Cercul Trigonometric & Valori Remarcabile",
+        "icon": "🔄",
+        "difficulty": "Mediu",
+        "keywords": [
+            "trigonometrie",
+            "sinus",
+            "cosinus",
+            "tangenta",
+            "cercul trigonometric",
+            "radiani",
+            "valori remarcabile",
+            "grade"
+        ],
+        "summary": "Cercul trigonometric (raza r = 1), unghiuri orientate, măsura în radiani (π rad = 180°), definiția funcțiilor sinus, cosinus, tangentă, cotangentă și tabelul valorilor remarcabile (0°, 30°, 45°, 60°, 90°).",
+        "lessons": [
+            "Cercul trigonometric este cercul cu centrul în originea O(0,0) și raza R = 1.",
+            "Un unghi de măsură x radiani determină pe cercul trigonometric un punct M(cos x, sin x):",
+            "  - Axa orizontală (Ox) este axa cosinusurilor.",
+            "  - Axa verticală (Oy) este axa sinusurilor.",
+            "Transformare grade - radiani: x_rad / π = x_grade / 180°. Astfel, 30° = π/6, 45° = π/4, 60° = π/3, 90° = π/2, 180° = π.",
+            "Tabelul valorilor remarcabile:",
+            "  - sin(0°) = 0, sin(30°) = 1/2, sin(45°) = √2/2, sin(60°) = √3/2, sin(90°) = 1.",
+            "  - cos(0°) = 1, cos(30°) = √3/2, cos(45°) = √2/2, cos(60°) = 1/2, cos(90°) = 0.",
+            "  - tg(x) = sin(x) / cos(x) (pt cos x ≠ 0); ctg(x) = cos(x) / sin(x) (pt sin x ≠ 0)."
+        ],
+        "examples": [
+            "Calculați E = sin²(30°) + cos²(30°): (1/2)² + (√3/2)² = 1/4 + 3/4 = 4/4 = 1.",
+            "Calculați tg(45°): sin(45°) / cos(45°) = (√2/2) / (√2/2) = 1."
+        ],
+        "formulas": [
+            "π rad = 180°",
+            "M(cos x, sin x) pe cercul trigonometric",
+            "sin² x + cos² x = 1  (formula fundamentală)",
+            "tg x = sin x / cos x",
+            "ctg x = cos x / sin x"
+        ],
+        "exercises": [
+            {
+                "question": "Cât este sin(30°)? (scrie ca fracție simplă: 1/2)",
+                "answer": "1/2"
+            },
+            {
+                "question": "Câte grade are unghiul de π/2 radiani?",
+                "answer": "90"
+            },
+            {
+                "question": "Cât este cos(60°)? (scrie ca 1/2)",
+                "answer": "1/2"
+            }
+        ],
+        "dictionary": {
+            "Radian": "Măsura unghiului la centru care subîntinde un arc de cerc cu lungimea egală cu raza cercului."
+        },
+        "fun_facts": [
+            "Cuvântul 'trigonometrie' provine din grecescul 'trigonon' (triunghi) și 'metron' (măsură). A fost dezvoltată inițial de astronomii greci și babilonieni pentru a naviga după stele."
+        ]
+    },
+    {
+        "id": "mate9_formule_trig",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Trigonometrie",
+        "title": "9. Formule Trigonometrice Fundamentale",
+        "icon": "🧩",
+        "difficulty": "Avansat",
+        "keywords": [
+            "formule trigonometrice",
+            "unghi dublu",
+            "suma unghiuri",
+            "sin(a+b)",
+            "cos(a+b)",
+            "sin 2x",
+            "cos 2x"
+        ],
+        "summary": "Formule fundamentale: formule de adunare sin(a ± b), cos(a ± b), formulele pentru unghi dublu sin(2x) și cos(2x), transformarea sumelor în produse.",
+        "lessons": [
+            "Formula fundamentală a trigonometriei: sin² x + cos² x = 1 pentru orice x ∈ R.",
+            "Formule pentru sumă și diferență:",
+            "  - sin(a + b) = sin a · cos b + cos a · sin b",
+            "  - sin(a - b) = sin a · cos b - cos a · sin b",
+            "  - cos(a + b) = cos a · cos b - sin a · sin b",
+            "  - cos(a - b) = cos a · cos b + sin a · sin b",
+            "Formule pentru unghi dublu:",
+            "  - sin(2x) = 2 · sin x · cos x",
+            "  - cos(2x) = cos² x - sin² x = 2cos² x - 1 = 1 - 2sin² x.",
+            "Paritate și periodicitate: sin(-x) = -sin x (funcție impară), cos(-x) = cos x (funcție pară). Perioada principală T = 2π."
+        ],
+        "examples": [
+            "Calculați sin(75°): sin(45° + 30°) = sin 45° cos 30° + cos 45° sin 30° = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2) / 4.",
+            "Dacă sin x = 3/5 și x ∈ (0, π/2), atunci cos x = √(1 - 9/25) = 4/5. sin(2x) = 2 · (3/5) · (4/5) = 24/25."
+        ],
+        "formulas": [
+            "sin² x + cos² x = 1",
+            "sin(a + b) = sin a cos b + cos a sin b",
+            "cos(a + b) = cos a cos b - sin a sin b",
+            "sin(2x) = 2 sin x cos x",
+            "cos(2x) = cos² x - sin² x"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă sin x = 0, cât este cos² x?",
+                "answer": "1"
+            },
+            {
+                "question": "Calculați sin(2x) dacă sin x = 1/2 și cos x = √3/2. (scrie răspunsul ca √3/2)",
+                "answer": "√3/2"
+            },
+            {
+                "question": "Este funcția cos(x) pară sau impară?",
+                "answer": "para"
+            }
+        ],
+        "dictionary": {
+            "Periodicitate": "Proprietatea unei funcții f de a repeta valorile la adăugarea unei constante T: f(x + T) = f(x)."
+        },
+        "fun_facts": [
+            "Undele sonore, lumina, semnalele Wi-Fi și curentul alternativ funcționează toate conform funcțiilor sinusoidale fundamentale!"
+        ]
+    },
+    {
+        "id": "mate9_trig_geometrie",
+        "subject": "math",
+        "subjectName": "Matematică",
+        "grade": 9,
+        "category": "Geometrie",
+        "title": "10. Aplicații ale Trigonometriei în Geometrie",
+        "icon": "📐",
+        "difficulty": "Avansat",
+        "keywords": [
+            "teorema sinusurilor",
+            "teorema cosinusului",
+            "aria triunghiului",
+            "raza cerc circumscris",
+            "raza cerc inscris"
+        ],
+        "summary": "Teorema sinusurilor (a / sin A = 2R), Teorema cosinusului (teorema lui Pitagora generalizată a² = b² + c² - 2bc cos A), formule pentru aria triunghiului (A = (ab sin C)/2, formula lui Heron).",
+        "lessons": [
+            "Teorema Sinusurilor: În orice triunghi ABC cu laturile a, b, c și unghiurile A, B, C: a / sin A = b / sin B = c / sin C = 2R, unde R este raza cercului circumscris triunghiului.",
+            "Teorema Cosinusului (Pitagora generalizată): a² = b² + c² - 2 · b · c · cos A (și analoagele pentru b² și c²). Permite aflarea unei laturi cunoscând celelalte două și unghiul dintre ele.",
+            "Formule pentru aria triunghiului ABC:",
+            "  1. Formula trigonometrică: Aria = (a · b · sin C) / 2 = (b · c · sin A) / 2 = (a · c · sin B) / 2.",
+            "  2. Formula cu raza cercului circumscris: Aria = (a · b · c) / (4R).",
+            "  3. Formula cu semiperimetrul p = (a + b + c)/2: Aria = p · r (r = raza cercului înscris).",
+            "  4. Formula lui Heron: Aria = √[p(p - a)(p - b)(p - c)]."
+        ],
+        "examples": [
+            "Fie b = 4, c = 6 și unghiul A = 60°. Aflați latura a: a² = 4² + 6² - 2·4·6·cos(60°) = 16 + 36 - 48·(1/2) = 52 - 24 = 28 ⇒ a = √28 = 2√7.",
+            "Aria triunghiului cu a = 6, b = 8 și C = 30°: Aria = (6 · 8 · sin 30°) / 2 = (48 · 1/2) / 2 = 12."
+        ],
+        "formulas": [
+            "a / sin A = b / sin B = c / sin C = 2R",
+            "a² = b² + c² - 2bc cos A",
+            "Aria = (ab sin C) / 2",
+            "Aria = abc / (4R)",
+            "Aria = p · r"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă a = 10 și sin A = 1/2, cât este diametrul 2R al cercului circumscris?",
+                "answer": "20"
+            },
+            {
+                "question": "Calculați aria triunghiului cu laturile 4 și 5 și unghiul dintre ele de 90°.",
+                "answer": "10"
+            },
+            {
+                "question": "Dacă într-un triunghi dreptunghic A = 90°, cos A = 0, ce devine teorema cosinusului? (Pitagora: a² = b² + c²)",
+                "answer": "pitagora"
+            }
+        ],
+        "dictionary": {
+            "Rază cerc circumscris": "Raza cercului care trece prin toate cele trei vârfuri ale triunghiului.",
+            "Semiperimetru": "Jumătatea perimetrului unui poligon: p = (a + b + c) / 2."
+        },
+        "fun_facts": [
+            "Teorema cosinusului a fost formulată geometric de Euclid în Cartea a II-a a 'Elementelor' sale, cu peste 2000 de ani în urmă!"
+        ]
+    },
+    {
+        "id": "info9_intro_cpp",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Baze C++",
+        "title": "11. Structura unui Program C++ & Variabile",
+        "icon": "💻",
+        "difficulty": "Ușor",
+        "keywords": [
+            "cpp",
+            "c++",
+            "variabile",
+            "tipuri de date",
+            "cin",
+            "cout",
+            "iostream",
+            "main",
+            "int",
+            "float",
+            "char",
+            "bool"
+        ],
+        "summary": "Structura schelet a unui program C++, biblioteca iostream, funcția main, variabile, constante, tipuri fundamentale de date (int, float, double, char, bool) și citire/scriere cu cin și cout.",
+        "lessons": [
+            "Orice program C++ începe execuția din funcția `main()`.",
+            "Directiva `#include <iostream>` adaugă suportul pentru operațiile de intrare/ieșire (`cin`, `cout`).",
+            "`using namespace std;` permite utilizarea identificatorilor standard fără prefixul `std::`.",
+            "Tipuri fundamentale de date:",
+            "  - `int`: numere întregi (ex: -5, 0, 42) — ocupă 4 octeți (aprox [-2·10⁹, 2·10⁹]).",
+            "  - `float` / `double`: numere reale cu virgulă (ex: 3.14, -0.05).",
+            "  - `char`: un singur caracter (ex: 'A', '9', '+') — ocupă 1 octet.",
+            "  - `bool`: valori de adevăr (`true` / `false` sau 1 / 0).",
+            "Citire și afișare: `cin >> x;` citește de la tastatură în variabila x; `cout << 'Rezultat: ' << x << '\\n';` afișează pe ecran."
+        ],
+        "examples": [
+            "// Program simplu de sumă\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cout << \"Introdu doua numere: \";\n    cin >> a >> b;\n    int suma = a + b;\n    cout << \"Suma este: \" << suma << endl;\n    return 0;\n}"
+        ],
+        "formulas": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() { ... return 0; }",
+            "cin >> variabila;",
+            "cout << valoare << endl;"
+        ],
+        "exercises": [
+            {
+                "question": "Ce tip de date C++ folosești pentru a stoca numărul 3.14? (float/int)",
+                "answer": "float"
+            },
+            {
+                "question": "Ce operator C++ folosești cu fluxul cin pentru citire? (>> sau <<)",
+                "answer": ">>"
+            },
+            {
+                "question": "Câți octeți ocupă de regulă tipul int pe un sistem modern pe 32/64 biți?",
+                "answer": "4"
+            }
+        ],
+        "dictionary": {
+            "Variabilă": "O zonă de memorie denumită care poate păstra o valoare ce se poate modifica în timpul rulării programului.",
+            "Identificator": "Numele dat unei variabile, funcții sau constante conform regulilor limbajului."
+        },
+        "fun_facts": [
+            "Limbajul C++ a fost creat de Bjarne Stroustrup în 1979 la Bell Labs, inițial sub numele de 'C with Classes'."
+        ]
+    },
+    {
+        "id": "info9_operatori_expresii",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Baze C++",
+        "title": "12. Operatori și Expresii în C++",
+        "icon": "⚡",
+        "difficulty": "Ușor",
+        "keywords": [
+            "operatori",
+            "aritmetici",
+            "modulo",
+            "div",
+            "relationali",
+            "logici",
+            "incrementare",
+            "prioritate"
+        ],
+        "summary": "Operatori aritmetici (+, -, *, /, %), operatorul modulo (%), împărțirea întreagă vs reală, operatori relaționali (<, <=, >, >=, ==, !=) și operatori logici (&&, ||, !).",
+        "lessons": [
+            "Operatori aritmetici: adunare (+), scădere (-), înmulțire (*), împărțire (/), restul împărțirii întregi (%).",
+            "Atenție la împărțire: Dacă ambii operanzi sunt întregi, `7 / 2` dă `3` (câtul întreg)! Pentru împărțire reală: `7.0 / 2` dă `3.5`.",
+            "Operatorul modulo (`%`): Returnează restul împărțirii a două numere întregi. Exemplu: `17 % 5` este `2`.",
+            "Operatori de incrementare/decrementare: `x++` (mărește x cu 1 după evaluare), `++x` (mărește înainte), `x--`, `--x`.",
+            "Operatori relaționali: `<` (mai mic), `<=` (mai mic sau egal), `>` (mai mare), `>=` (mai mare sau egal), `==` (egalitate de verificare!), `!=` (diferit).",
+            "Operatori logici: `&&` (ȘI logic - ambele condiții adevărate), `||` (SAU logic - cel puțin o condiție adevărată), `!` (NEGAȚIE logică)."
+        ],
+        "examples": [
+            "// Evaluare expresie\nint a = 14, b = 4;\nint cat = a / b;    // cat este 3\nint rest = a % b;   // rest este 2\nbool par = (a % 2 == 0); // par este true (1)"
+        ],
+        "formulas": [
+            "a % b  (restul împărțirii întregi)",
+            "a / b  (câtul împărțirii)",
+            "== vs =  (verificare vs atribuire)",
+            "&& (ȘI), || (SAU), ! (NU)"
+        ],
+        "exercises": [
+            {
+                "question": "Cât este rezultatul expresiei 19 % 4 în C++?",
+                "answer": "3"
+            },
+            {
+                "question": "Cât este 15 / 2 în C++ dacă ambele numere sunt de tip int?",
+                "answer": "7"
+            },
+            {
+                "question": "Care este operatorul de egalitate pentru comparare în C++?",
+                "answer": "=="
+            }
+        ],
+        "dictionary": {
+            "Modulo": "Operația matematică ce extrage restul rămas în urma împărțirii a două numere întregi.",
+            "Short-circuit evaluation": "Tehnica prin care C++ nu mai evaluează a doua parte a expresiei logice dacă rezultatul e deja cert (ex: `false && ...`)."
+        },
+        "fun_facts": [
+            "Confuzia între operatorul de atribuire `=` și cel de comparare `==` este una dintre cele mai frecvente cauze de erori subtile din codul scris de începători!"
+        ]
+    },
+    {
+        "id": "info9_structuri_decizionale",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Structuri de Control",
+        "title": "13. Structura de Decizie (if - else & switch)",
+        "icon": "🔀",
+        "difficulty": "Ușor",
+        "keywords": [
+            "if",
+            "else",
+            "switch",
+            "case",
+            "break",
+            "conditie",
+            "ramificare",
+            "maxim"
+        ],
+        "summary": "Instrucțiunea de decizie simplă if, decizia alternativă if-else, decizii imbricate și instrucțiunea de selecție multiplă switch-case.",
+        "lessons": [
+            "Instrucțiunea `if`: evaluează o condiție booleană. Dacă este adevărată (`true`), execută blocul de instrucțiuni asociat.",
+            "Sintaxă:\n`if (condiție) {\n    // instrucțiuni executate dacă e adevărat\n} else {\n    // instrucțiuni executate dacă e fals\n}`",
+            "Ramificări multiple:\n`if (x > 0) cout << \"Pozitiv\";\nelse if (x < 0) cout << \"Negativ\";\nelse cout << \"Nul\";`",
+            "Instrucțiunea `switch`: utilă pentru verificarea unei variabile cu valori întregi sau caractere constante fixe.",
+            "Regula de aur la `switch`: fiecare `case` trebuie terminat de regulă cu `break;` pentru a evita 'căderea' în instrucțiunile următoare (fall-through)!"
+        ],
+        "examples": [
+            "// Maximul a două numere\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \"Maximul este: \" << a;\n    } else {\n        cout << \"Maximul este: \" << b;\n    }\n    return 0;\n}"
+        ],
+        "formulas": [
+            "if (conditie) { ... }",
+            "if (conditie) { ... } else { ... }",
+            "switch (variabila) { case val: ... break; default: ... }"
+        ],
+        "exercises": [
+            {
+                "question": "Ce cuvânt cheie este folosit în switch pentru a opri executarea instrucțiunilor următoare?",
+                "answer": "break"
+            },
+            {
+                "question": "Ce ramură a instrucțiunii if se execută dacă condiția este falsă?",
+                "answer": "else"
+            },
+            {
+                "question": "Ce se afișează dacă x = 10 în codul: if (x % 2 == 0) cout << 1; else cout << 0;?",
+                "answer": "1"
+            }
+        ],
+        "dictionary": {
+            "Ramificare": "Punctul dintr-un algoritm unde fluxul de execuție alege una din două sau mai multe căi posibile."
+        },
+        "fun_facts": [
+            "În procesoarele moderne există unități speciale numite 'Branch Predictors' care ghicesc din timp ce ramură a unui `if` se va executa pentru a crește viteza programului!"
+        ]
+    },
+    {
+        "id": "info9_structuri_repetitive_while",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Structuri Repetitive",
+        "title": "14. Structuri Repetitive: while și do-while",
+        "icon": "🔁",
+        "difficulty": "Mediu",
+        "keywords": [
+            "while",
+            "do while",
+            "bucla",
+            "ciclu",
+            "conditie la intrare",
+            "conditie la iesire",
+            "bucla infinita"
+        ],
+        "summary": "Structura repetitivă cu test inițial (while) și structura cu test final (do-while). Condiții de oprire, actualizarea variabilelor de control și evitarea buclelor infinite.",
+        "lessons": [
+            "Instrucțiunea `while` (cu test inițial):\n`while (condiție) {\n    // corpul buclei\n}`",
+            "Funcționare: se evaluează condiția. Dacă este adevărată, se execută corpul buclei și se revine la evaluarea condiției. Dacă e falsă de la început, corpul nu se execută niciodată!",
+            "Instrucțiunea `do-while` (cu test final):\n`do {\n    // corpul buclei\n} while (condiție);`",
+            "Funcționare: corpul buclei se execută garantat cel puțin o dată, iar condiția se verifică la final.",
+            "Bucla infinită: apare atunci când condiția rămâne permanent adevărată (ex: uităm să incrementăm variabila de control)."
+        ],
+        "examples": [
+            "// Afișarea numerelor de la 1 la n cu while\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, i = 1;\n    cin >> n;\n    while (i <= n) {\n        cout << i << \" \";\n        i++;\n    }\n    return 0;\n}"
+        ],
+        "formulas": [
+            "while (conditie) { ... }  // test initial",
+            "do { ... } while (conditie);  // test final"
+        ],
+        "exercises": [
+            {
+                "question": "De câte ori se execută corpul unui do-while în cel mai nefavorabil caz (când condiția e falsă de la început)?",
+                "answer": "1"
+            },
+            {
+                "question": "De câte ori se execută bucla: int i = 5; while (i < 5) { i++; }?",
+                "answer": "0"
+            },
+            {
+                "question": "Dacă i = 1 și executăm while(i <= 3) { i++; }, care va fi valoarea finală a lui i?",
+                "answer": "4"
+            }
+        ],
+        "dictionary": {
+            "Iterație": "Fiecare execuție individuală completă a corpului unei structuri repetitive."
+        },
+        "fun_facts": [
+            "În 1962, o rachetă NASA Mariner 1 spre Venus a trebuit distrusă în zbor din cauza unei simple greșeli de sintaxă într-o buclă FOR/WHILE dintr-un cod Fortran!"
+        ]
+    },
+    {
+        "id": "info9_structura_for",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Structuri Repetitive",
+        "title": "15. Structura Repetitivă for & Iterații",
+        "icon": "🔄",
+        "difficulty": "Mediu",
+        "keywords": [
+            "for",
+            "bucla for",
+            "contor",
+            "incrementare",
+            "initializare",
+            "bucle imbricate",
+            "matrice"
+        ],
+        "summary": "Structura repetitivă cu număr cunoscut de pași for(initializare; conditie; pas), contor de iterație, bucle imbricate (for în for) și optimizarea parcurgerilor.",
+        "lessons": [
+            "Sintaxă generală: `for (inițializare; condiție; pas) { // instrucțiuni }`",
+            "Fluxul de execuție:",
+            "  1. Se execută inițializarea o singură dată (ex: `int i = 1`).",
+            "  2. Se verifică condiția (ex: `i <= n`). Dacă e falsă, se iese din buclă.",
+            "  3. Se execută corpul buclei.",
+            "  4. Se execută pasul de actualizare (ex: `i++`). Se revine la pasul 2.",
+            "Bucle imbricate: o buclă for în interiorul altei bucle for — des folosită pentru generarea de matrici, tabele și figuri geometrice din caractere."
+        ],
+        "examples": [
+            "// Calculul sumei primelor n numere cu for\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, s = 0;\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        s += i;\n    }\n    cout << \"Suma este: \" << s;\n    return 0;\n}"
+        ],
+        "formulas": [
+            "for (int i = 1; i <= n; i++) { ... }",
+            "s += i  (echivalent cu s = s + i)",
+            "i--  (pas descrescător)"
+        ],
+        "exercises": [
+            {
+                "question": "Câte iterații face bucla: for (int i = 1; i <= 10; i++)?",
+                "answer": "10"
+            },
+            {
+                "question": "Ce valoare are s după codul: int s = 0; for(int i=1; i<=3; i++) s += i;?",
+                "answer": "6"
+            },
+            {
+                "question": "Dacă for(int i = 0; i < 5; i += 2), câte valori ia i?",
+                "answer": "3"
+            }
+        ],
+        "dictionary": {
+            "Contor": "Variabilă care ține evidența numărului de iterații efectuate într-un ciclu repetitiv."
+        },
+        "fun_facts": [
+            "În C++, orice buclă `for(init; cond; pas)` poate fi rescrisă exact ca o buclă `while`, fiind complet echivalente ca funcționalitate logică."
+        ]
+    },
+    {
+        "id": "info9_prelucrare_cifre",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Algoritmi Elementari",
+        "title": "16. Prelucrarea Cifrelor unui Număr",
+        "icon": "🔢",
+        "difficulty": "Mediu",
+        "keywords": [
+            "cifre",
+            "oglindit",
+            "palindrom",
+            "suma cifrelor",
+            "numar cifre",
+            "ultima cifra",
+            "taiere cifra"
+        ],
+        "summary": "Algoritmul fundamental de prelucrare a cifrelor în baza 10: extragerea ultimei cifre cu % 10, tăierea ultimei cifre cu / 10, calculul numărului de cifre, sumei cifrelor, oglinditului și verificarea proprietății de palindrom.",
+        "lessons": [
+            "Regula de bază în sistemul zecimal:",
+            "  - Ultima cifră a numărului n este: `c = n % 10`.",
+            "  - Numărul fără ultima cifră este: `n = n / 10`.",
+            "Schema generală de parcurgere a cifrelor:\n`while (n > 0) {\n    int c = n % 10; // prelucrează cifra c\n    n = n / 10;\n}`",
+            "Calculul oglinditului (inversului):\n`int ogl = 0;\nwhile (n > 0) {\n    ogl = ogl * 10 + n % 10;\n    n /= 10;\n}`",
+            "Palindrom: un număr este palindrom dacă este egal cu oglinditul său (ex: 12321, 55, 1001)."
+        ],
+        "examples": [
+            "// Verificare palindrom\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, copie, ogl = 0;\n    cin >> n;\n    copie = n;\n    while (n > 0) {\n        ogl = ogl * 10 + n % 10;\n        n /= 10;\n    }\n    if (copie == ogl) cout << \"Este palindrom!\";\n    else cout << \"Nu este palindrom!\";\n    return 0;\n}"
+        ],
+        "formulas": [
+            "c = n % 10  (ultima cifră)",
+            "n = n / 10  (elimină ultima cifră)",
+            "ogl = ogl * 10 + c  (construcție oglindit)",
+            "n == ogl  (condiție palindrom)"
+        ],
+        "exercises": [
+            {
+                "question": "Care este ultima cifră a numărului 4879? (obținută prin % 10)",
+                "answer": "9"
+            },
+            {
+                "question": "Care este oglinditul numărului 1230?",
+                "answer": "321"
+            },
+            {
+                "question": "Este numărul 1221 un palindrom? (da/nu)",
+                "answer": "da"
+            }
+        ],
+        "dictionary": {
+            "Palindrom": "Un număr sau text care se citește la fel de la stânga la dreapta și de la dreapta la stânga.",
+            "Oglindit": "Numărul format prin scrierea cifrelor în ordine inversă."
+        },
+        "fun_facts": [
+            "Cel mai mic număr palindrom compus din cifre nenule distincte este 101... dar cel mai mare palindrom din universul jocurilor este 999999999!"
+        ]
+    },
+    {
+        "id": "info9_divizibilitate_primi",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Algoritmi Elementari",
+        "title": "17. Divizibilitate & Numere Prime",
+        "icon": "✨",
+        "difficulty": "Mediu",
+        "keywords": [
+            "numere prime",
+            "primalitate",
+            "divizori",
+            "descompunere factori primi",
+            "radical",
+            "complexitate"
+        ],
+        "summary": "Algoritmul optim de testare a primalității în O(√n), găsirea tuturor divizorilor unui număr natural și descompunerea în factori primi.",
+        "lessons": [
+            "Un număr n > 1 este prim dacă are exact doi divizori distincți: 1 și el însuși.",
+            "Observație matematică esențială: Dacă n nu este prim, are cel puțin un divizor d > 1 astfel încât d · d ≤ n (adică d ≤ √n).",
+            "Algoritmul optim de verificare primalitate:",
+            "  - Dacă n < 2, nu este prim.",
+            "  - Dacă n == 2, este prim.",
+            "  - Dacă n % 2 == 0, nu este prim.",
+            "  - Verificăm divizorii impari d de la 3 până la d · d ≤ n cu pasul d += 2.",
+            "Descompunerea în factori primi: împărțim succesiv n la factorul d începând de la 2 și contorizăm puterea până când n devine 1."
+        ],
+        "examples": [
+            "// Verificare dacă n este prim optim\n#include <iostream>\nusing namespace std;\n\nbool estePrim(int n) {\n    if (n < 2) return false;\n    if (n == 2) return true;\n    if (n % 2 == 0) return false;\n    for (int d = 3; d * d <= n; d += 2) {\n        if (n % d == 0) return false;\n    }\n    return true;\n}"
+        ],
+        "formulas": [
+            "d * d <= n  (condiția optimă d ≤ √n)",
+            "d += 2  (sărim numerele pare)",
+            "n % d == 0  (d este divizor al lui n)"
+        ],
+        "exercises": [
+            {
+                "question": "Care este singurul număr par care este prim?",
+                "answer": "2"
+            },
+            {
+                "question": "Până la ce valoare maximă trebuie să căutăm divizori pentru n = 49? (scrie valoarea lui √49)",
+                "answer": "7"
+            },
+            {
+                "question": "Este numărul 37 număr prim? (da/nu)",
+                "answer": "da"
+            }
+        ],
+        "dictionary": {
+            "Complexitate temporală": "Măsura timpului de calcul al unui algoritm în funcție de mărimea datelor de intrare (ex: O(√n) vs O(n)).",
+            "Factor prim": "Un divizor al unui număr care este la rândul său număr prim."
+        },
+        "fun_facts": [
+            "Criptografia modernă (cum ar fi algoritmul RSA care securizează plățile cu cardul pe internet) se bazează pe faptul că înmulțirea a două numere prime mari este instantă, dar descompunerea produsului înapoi în factori primi durează mii de ani!"
+        ]
+    },
+    {
+        "id": "info9_cmmdc_euclid",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Algoritmi Elementari",
+        "title": "18. Algoritmul lui Euclid (CMMDC & CMMMC)",
+        "icon": "⚡",
+        "difficulty": "Mediu",
+        "keywords": [
+            "cmmdc",
+            "cmmmc",
+            "algoritmul lui euclid",
+            "impartiri repetate",
+            "scaderi repetate",
+            "fractie ireductibila"
+        ],
+        "summary": "Cel mai mare divizor comun (CMMDC) prin algoritmul lui Euclid (varianta prin scăderi repetate și varianta optimă prin împărțiri repetate). Calculul CMMMC prin relația a · b = cmmdc · cmmmc.",
+        "lessons": [
+            "CMMDC a două numere a și b este cel mai mare număr natural care divide atât pe a cât și pe b.",
+            "Algoritmul lui Euclid prin împărțiri repetate (cel mai rapid):",
+            "  - Cât timp b ≠ 0: calculăm restul `r = a % b`, facem `a = b` și `b = r`.",
+            "  - La final, CMMDC este valoarea rămasă în `a`.",
+            "Calculul CMMMC (cel mai mic multiplu comun):",
+            "  - Folosim proprietatea fundamentală: `a · b = CMMDC(a, b) · CMMMC(a, b)`.",
+            "  - Rezultă: `CMMMC(a, b) = (a · b) / CMMDC(a, b)`."
+        ],
+        "examples": [
+            "// CMMDC prin impartiri repetate\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    while (b != 0) {\n        int r = a % b;\n        a = b;\n        b = r;\n    }\n    cout << \"CMMDC este: \" << a;\n    return 0;\n}"
+        ],
+        "formulas": [
+            "r = a % b; a = b; b = r;  (pasul Euclid)",
+            "cmmmc = (a * b) / cmmdc",
+            "Fractie ireductibila: simplificare cu CMMDC(numarator, numitor)"
+        ],
+        "exercises": [
+            {
+                "question": "Cât este CMMDC pentru numerele 24 și 36?",
+                "answer": "12"
+            },
+            {
+                "question": "Cât este CMMDC pentru două numere prime între ele?",
+                "answer": "1"
+            },
+            {
+                "question": "Dacă CMMDC(a, b) = 6 și a · b = 180, cât este CMMMC(a, b)?",
+                "answer": "30"
+            }
+        ],
+        "dictionary": {
+            "Numere prime între ele": "Două numere a căror singur divizor comun este 1 (CMMDC = 1).",
+            "Euclid": "Matematician din Grecia antică (cca. 300 î.Hr.), supranumit 'Părintele Geometriei'."
+        },
+        "fun_facts": [
+            "Algoritmul lui Euclid este considerat cel mai vechi algoritm non-trivial din istoria omenirii care se folosește activ și neschimbat în calculatoarele de azi!"
+        ]
+    },
+    {
+        "id": "info9_vectori_baza",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Tablouri (Vectori)",
+        "title": "19. Tablouri Unidimensionale (Vectori): Baze",
+        "icon": "📦",
+        "difficulty": "Mediu",
+        "keywords": [
+            "vectori",
+            "tablouri",
+            "indexare",
+            "v[i]",
+            "citire vector",
+            "afisare vector",
+            "elemente",
+            "maxim vector"
+        ],
+        "summary": "Conceptul de tablou unidimensional (vector): declarare int v[100], indexare de la 0 sau de la 1, citirea și afișarea elementelor, determinarea minimului/maximului și a sumei elementelor.",
+        "lessons": [
+            "Un tablou unidimensional (vector) este o colecție omogenă de variabile de același tip, stocate în locații de memorie consecutive.",
+            "Declarare: `int v[105];` alocă spațiu pentru 105 elemente de tip `int`.",
+            "Indexare: în C++ elementele sunt indexate implicit de la `0` până la `n-1`, dar în liceu se folosește adesea indexarea de la `1` la `n` pentru claritate matematică.",
+            "Citirea unui vector cu n elemente:\n`for (int i = 1; i <= n; i++) cin >> v[i];`",
+            "Afișarea unui vector:\n`for (int i = 1; i <= n; i++) cout << v[i] << \" \";`",
+            "Găsirea elementului maxim:\n`int maxi = v[1];\nfor (int i = 2; i <= n; i++) if (v[i] > maxi) maxi = v[i];`"
+        ],
+        "examples": [
+            "// Suma si maximul dintr-un vector\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, v[105], s = 0;\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        cin >> v[i];\n        s += v[i];\n    }\n    cout << \"Suma: \" << s;\n    return 0;\n}"
+        ],
+        "formulas": [
+            "int v[1005];  (declarare vector)",
+            "cin >> v[i];  (citire element la pozitia i)",
+            "cout << v[i];  (afisare element)"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă vectorul are n = 5 elemente indexate de la 0, care este indexul ultimului element?",
+                "answer": "4"
+            },
+            {
+                "question": "Ce tip de colecție este un vector: omogenă sau eterogenă?",
+                "answer": "omogena"
+            },
+            {
+                "question": "Dacă v = {3, 7, 2, 9, 4}, care este valoarea maximă din vector?",
+                "answer": "9"
+            }
+        ],
+        "dictionary": {
+            "Index": "Poziția numerică a unui element în cadrul tabloului.",
+            "Omogenitate": "Proprietatea elementelor unei structuri de a avea toate același tip de date."
+        },
+        "fun_facts": [
+            "Accesul la orice element dintr-un vector pe baza indexului `v[i]` se face instantaneu în timp O(1), deoarece calculatorul calculează adresa exactă de memorie printr-o singură adunare!"
+        ]
+    },
+    {
+        "id": "info9_vectori_operatii",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Tablouri (Vectori)",
+        "title": "20. Operații pe Vectori: Inserare, Ștergere, Permutări",
+        "icon": "🛠️",
+        "difficulty": "Avansat",
+        "keywords": [
+            "inserare",
+            "stergere",
+            "permutare circulara",
+            "deplasare",
+            "vector",
+            "pozitie"
+        ],
+        "summary": "Operații avansate pe tablouri: inserarea unui nou element pe poziția k (deplasare spre dreapta), ștergerea elementului de pe poziția k (deplasare spre stânga) și permutarea circulară.",
+        "lessons": [
+            "Inserarea unui element x pe poziția pos:",
+            "  - Elementele de la pos până la n trebuie deplasate spre dreapta cu o poziție, pornind de la coadă (de la n spre pos):",
+            "  `for (int i = n; i >= pos; i--) v[i + 1] = v[i];`",
+            "  - Punem elementul: `v[pos] = x; n++;`",
+            "Ștergerea elementului de pe poziția pos:",
+            "  - Elementele de la pos+1 până la n sunt deplasate spre stânga:",
+            "  `for (int i = pos; i < n; i++) v[i] = v[i + 1];`",
+            "  - Scădem numărul de elemente: `n--;`",
+            "Permutarea circulară la stânga: salvăm primul element `aux = v[1]`, mutăm toate la stânga și punem `v[n] = aux`."
+        ],
+        "examples": [
+            "// Stergerea elementului de pe pozitia k\nint k = 2; // de exemplu stergem al doilea element\nfor (int i = k; i < n; i++) {\n    v[i] = v[i + 1];\n}\nn--; // vectorul are acum un element mai putin"
+        ],
+        "formulas": [
+            "Inserare: for (int i = n; i >= p; i--) v[i+1] = v[i]; v[p] = x; n++;",
+            "Stergere: for (int i = p; i < n; i++) v[i] = v[i+1]; n--;"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă un vector are inițial n = 5 elemente și inserăm un număr, cât devine n?",
+                "answer": "6"
+            },
+            {
+                "question": "Dacă un vector are n = 4 elemente și ștergem elementul de pe poziția 1, cât devine n?",
+                "answer": "3"
+            },
+            {
+                "question": "În ce direcție parcurgem vectorul la inserare pentru a nu suprascrie valorile? (dreapta/stanga)",
+                "answer": "dreapta"
+            }
+        ],
+        "dictionary": {
+            "Deplasare (Shift)": "Operația de mutare a conținutului mai multor căsuțe de memorie succesive spre stânga sau spre dreapta."
+        },
+        "fun_facts": [
+            "În limbaje moderne, structurile dinamice de tip `std::vector` efectuează automat aceste deplasări, dar înțelegerea mecanismului din spate este cheia performanței la olimpiade!"
+        ]
+    },
+    {
+        "id": "info9_sortare_vectori",
+        "subject": "info",
+        "subjectName": "Informatică C++",
+        "grade": 9,
+        "category": "Sortare & Căutare",
+        "title": "21. Algoritmi de Sortare: Bubble Sort & Selecție",
+        "icon": "📊",
+        "difficulty": "Avansat",
+        "keywords": [
+            "sortare",
+            "bubble sort",
+            "metoda bulelor",
+            "selectie directa",
+            "interschimbare",
+            "swap",
+            "crescator"
+        ],
+        "summary": "Metode clasice de ordonare a unui vector: Metoda bulelor (Bubble Sort), Sortarea prin selecție directă (Selection Sort) și funcția swap de interschimbare.",
+        "lessons": [
+            "Sortarea reprezintă așezarea elementelor unui vector într-o ordine specificată (crescătoare sau descrescătoare).",
+            "Funcția de interschimbare `swap(a, b)`:\n`int aux = a; a = b; b = aux;` (sau `std::swap(a, b);`).",
+            "Metoda Bulelor (Bubble Sort):",
+            "  - Comparăm elementele adiacente `v[i]` și `v[i+1]`. Dacă sunt în ordine greșită, le interschimbăm.",
+            "  - Repetăm parcurgerea până când la o trecere nu se mai efectuează nicio schimbare (vectorul e sortat).",
+            "Sortarea prin Selecție Directă:",
+            "  - Pentru fiecare poziție `i` de la 1 la n-1, căutăm cel mai mic element din restul vectorului (de la i+1 la n) și îl interschimbăm cu `v[i]`."
+        ],
+        "examples": [
+            "// Bubble Sort clasic\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 5, v[5] = {5, 2, 8, 1, 3};\n    bool sortat;\n    do {\n        sortat = true;\n        for (int i = 0; i < n - 1; i++) {\n            if (v[i] > v[i + 1]) {\n                swap(v[i], v[i + 1]);\n                sortat = false;\n            }\n        }\n    } while (!sortat);\n    return 0;\n}"
+        ],
+        "formulas": [
+            "swap(v[i], v[i+1])  (interschimbare)",
+            "if (v[i] > v[i+1])  (condiție sortare crescătoare)",
+            "Complexitate: O(n²) în cazul cel mai nefavorabil"
+        ],
+        "exercises": [
+            {
+                "question": "Dacă v = {5, 1, 4}, care este prima pereche inversată în Bubble Sort? (scrie: 5,1)",
+                "answer": "5,1"
+            },
+            {
+                "question": "Cum se numește funcția standard C++ care interschimbă două valori?",
+                "answer": "swap"
+            },
+            {
+                "question": "Care este vectorul sortat crescător pentru {3, 1, 2}? (scrie fără spații: 1,2,3)",
+                "answer": "1,2,3"
+            }
+        ],
+        "dictionary": {
+            "Sortare stabilă": "O metodă de sortare care păstrează ordinea relativă inițială a elementelor cu valori egale.",
+            "Inversiune": "O pereche de indici (i, j) cu i < j pentru care v[i] > v[j]."
+        },
+        "fun_facts": [
+            "Deși Bubble Sort este cel mai intuitiv algoritm de sortare, pe colecții de 1 milion de elemente ar dura zile întregi, în timp ce algoritmii rapizi (QuickSort / MergeSort) termină în sub o secundă!"
+        ]
+    }
+]
